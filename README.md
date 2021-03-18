@@ -1,4 +1,4 @@
-<h1 align="center">ORM E-commerce-Back-End</h1>
+<h1 align="center">Coding Bootcamp Survival Guide</h1>
   
   <p align="center">
     <img src="https://img.shields.io/github/repo-size/Coding-Bootcamp-Survival-Guide/Coding-Bootcamp-Survival-Guide?style=plastic" />
