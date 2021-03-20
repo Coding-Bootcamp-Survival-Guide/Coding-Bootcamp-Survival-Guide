@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Tech News</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+
+            <nav>
+                {{!-- 14.3.7 we are checking for loggedIn in the main layout, but we're only passing loggedIn to the
+                single-post.handlebars
+                template. Fortunately, variables that are passed to view templates are automatically passed to the main
+                layout. --}}
+                <a href="/">home</a>
+                {{#if loggedIn}}
+                <a href="/dashboard">dashboard</a>
+                {{/if}}
+                <a href="/">tools</a>
+                <a href="/">front-end</a>
+                <a href="/">back-end</a>
+                <a href="/">decompress</a>
+                {{#unless loggedIn}}
+                <a href="/login">login</a>
+                {{/unless}}
+                {{#if loggedIn}}
+                <button id="logout" class="btn-no-style">logout</button>
+                {{/if}}
+            </nav>
+            <div class="title-wrapper">
+            <h1>
+                <a href="/">Coding Bootcamp Survival Guide</a>
+            </h1>
+            </div>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+        </footer>
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>

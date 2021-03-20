@@ -1,0 +1,33 @@
+{
+  "name": "coding-bootcamp-survival-guide",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Coding Bootcamp Survival Guide</h1>",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "connect-session-sequelize": "^6.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "handlebars": "^4.7.3",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coding-Bootcamp-Survival-Guide/Coding-Bootcamp-Survival-Guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coding-Bootcamp-Survival-Guide/Coding-Bootcamp-Survival-Guide/issues"
+  },
+  "homepage": "https://github.com/Coding-Bootcamp-Survival-Guide/Coding-Bootcamp-Survival-Guide#readme"
+}
