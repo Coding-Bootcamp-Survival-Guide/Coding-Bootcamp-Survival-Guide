@@ -10,9 +10,22 @@
   </div>
 
   <div>
-    <button type="submit">add comment</button>
-    <button type="button" class="upvote-btn">like</button>
+    {{!-- <button type="button" class="upvote-btn">like</button> --}}
+    <div class="buttons">
+{{!--  if I already voted on it the session user id === the vote user id      --}}
+{{!--  if I want to remove the vote i need the vote id with the user id matching the session id      --}}
 
+      {{#if (check_for_user_id post.votes userId) }}
+        {{#each post.votes}}
+          {{#if (check_if_equal user_id ../userId)}}
+            <button class="liked-button" type="submit" id="vote-id-{{id}}"></button>
+          {{/if}}
+        {{/each}}
+      {{else}}
+        <button class="like-button" type="submit"></button>
+      {{/if}}
+    </div>
+    <button class="submit-button" type="submit">add comment</button>
   </div>
 </form>
 {{/if}}

@@ -38,11 +38,13 @@ router.get('/:id', (req, res) => {
         }
       },
       {
-        model: Post,
-        attributes: ['title'],
-        through: Vote,
-        as: 'voted_posts'
-      }
+        model: Vote,
+        attributes: ['id', 'user_id', 'post_id', 'created_at'],
+        include: {
+          model: Post,
+          attributes: ['title']
+        }
+      },
     ]
   })
     .then(dbUserData => {

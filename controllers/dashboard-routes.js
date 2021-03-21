@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Vote} = require('../models');
 
 // We'll hardcode the loggedIn property as true on this route, because a user won't even be able to get to 
 // the dashboard page unless they're logged in.
@@ -16,8 +16,7 @@ router.get('/', withAuth, (req, res) => {
             'post_text',
             'post_url',
             'title',
-            'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+            'created_at'
         ],
         include: [
             {
@@ -31,6 +30,14 @@ router.get('/', withAuth, (req, res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Vote,
+                attributes: ['id', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
         ]
     })
@@ -56,8 +63,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             'post_text',
             'post_url',
             'title',
-            'created_at',
-            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+            'created_at'
         ],
         include: [
             {
@@ -71,6 +77,14 @@ router.get('/edit/:id', withAuth, (req, res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+                model: Vote,
+                attributes: ['id', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                }
             }
         ]
     })
@@ -97,9 +111,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
 // add a single post
 router.get('/new/', withAuth, (req, res) => {
 
-        res.render('new-post', {
-            loggedIn: true
-        });
+    res.render('new-post', {
+        loggedIn: true
+    });
 
 });
 

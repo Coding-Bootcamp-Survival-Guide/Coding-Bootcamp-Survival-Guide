@@ -7,7 +7,6 @@ async function deleteFormHandler(event) {
     const response = await fetch(`/api/posts/${id}`, {
       method: 'DELETE'
     });
-    console.log("I am in here and id is ", id);
     
     if (response.ok) {
       document.location.replace('/dashboard/')

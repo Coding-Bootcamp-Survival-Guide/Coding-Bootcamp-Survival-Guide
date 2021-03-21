@@ -1,10 +1,10 @@
 // USED BY controllers/index.js
 
 const router = require('express').Router();
-
 const sequelize = require('../config/connection');
+const withAuth = require('../utils/auth');
 
-const { Post, User, Comment } = require('../models');
+const { Post, User, Comment, Vote } = require('../models');
 
 // Because we've hooked up a template engine, we can now use res.render() and specify which template we want to use. 
 // In this case, we want to render the homepage.handlebars template (the .handlebars extension is implied). 
@@ -16,8 +16,7 @@ router.get('/', (req, res) => {
         'post_text',
         'post_url',
         'title',
-        'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        'created_at'
       ],
       include: [
         {
@@ -31,6 +30,14 @@ router.get('/', (req, res) => {
         {
           model: User,
           attributes: ['username']
+        },
+        {
+          model: Vote,
+          attributes: ['id', 'post_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['username']
+          }
         }
       ]
     })
@@ -72,8 +79,7 @@ router.get('/post/:id', (req, res) => {
       'post_text',
       'post_url',
       'title',
-      'created_at',
-      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+      'created_at'
     ],
     include: [
       {
@@ -87,6 +93,14 @@ router.get('/post/:id', (req, res) => {
       {
         model: User,
         attributes: ['username']
+      },
+      {
+        model: Vote,
+        attributes: ['id', 'post_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
       }
     ]
   })
@@ -102,7 +116,8 @@ router.get('/post/:id', (req, res) => {
       // pass data to template
       res.render('single-post', {
         post,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        userId: req.session.user_id
       });
     })
     .catch(err => {

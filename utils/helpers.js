@@ -17,5 +17,16 @@ module.exports = {
           return `${word}s`;
         }
         return word;
+    },
+    check_for_user_id: (array, id) => {
+      let found = false
+      for (i = 0; i < array.length; i++) {
+        if (array[i].user_id == id) found = true;
+      }
+      return found;
+    },
+    check_if_equal: (a, b) => {
+      if (a === b) return true;
+      else return false;
     }
   }
