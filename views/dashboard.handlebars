@@ -1,20 +1,19 @@
-<section>
-  <h2 class="post-new"><a href="/dashboard/new/" >Create a New Post</a></h2>
-</section>
+{{#unless isAdmin}}
+  <section>
 
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol class="post-list">
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
+  <h2>Posts You Have Liked</h2>
+  {{#if votes.length}}
+    <ol class="vote-list">
+      {{#each votes as |vote|}}
+        <li>
+          {{> post-info vote.post}}
+        </li>
+      {{/each}}
+      </ol>
+      </section>
+    {{/if}}
+{{/unless}}
+
 
 {{!-- <script src="/javascript/add-post.js"></script> --}}
 {{!-- <script src="/javascript/new-post.js"></script> --}}

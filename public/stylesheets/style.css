@@ -59,7 +59,7 @@ nav a, nav button {
 nav a:hover, nav button:hover {
   color: var(--color-lt2);
   text-shadow: var(--color-lt2);
-  font-size: larger;
+  /* font-size: larger; */
 }
 
 .btn-no-style {
@@ -108,7 +108,7 @@ nav a:hover, nav button:hover {
 .title-wrapper h1 a:hover {
   color: var(--color-lt1);
   text-shadow: var(--color-lt1);
-  font-size: larger;
+  /* font-size: larger; */
 } 
 
 main {
@@ -116,42 +116,6 @@ main {
   padding: 2% 4%;
 }
   
-
-
-/* border: 1px solid black; */
-/* 
-.like-button {
-  display: inline-block;
-  position: relative;
-  font-size: 32px;
-  cursor: pointer;
-  // border: 1px solid black;
-}
-  .like-button::before {
-  font-size: 3em;
-  color: var(--color-lt1);
-  content: '♥';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.like-button::after {
-  font-size: 3em;
-  color: red;
-  content: '♥';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 0.2s;
-}
-
-.like-button.liked::after {
-  transform: translate(-50%, -50%) scale(1.1);
-} */
-
 .buttons {
   display: inline-block;
 }
@@ -209,8 +173,6 @@ main {
   color: var(--color-dk1);
 }
 
-
-
 .edit-post-form a, .meta a, .post-new a {
   text-decoration: none;
   color:  var(--color-lt2);
@@ -237,7 +199,7 @@ main {
   color:var(--color-lt1);
 }
   
-.post-list {
+.post-list, .vote-list {
   margin: 0;
   padding: 0;
   list-style: none;

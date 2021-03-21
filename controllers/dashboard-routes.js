@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-const { Post, User, Comment, Vote} = require('../models');
+const { Post, User, Comment, Vote } = require('../models');
 
-// We'll hardcode the loggedIn property as true on this route, because a user won't even be able to get to 
-// the dashboard page unless they're logged in.
-router.get('/', withAuth, (req, res) => {
+
+// get all posts admin loggedIn user
+router.get('/admin', withAuth, (req, res) => {
     Post.findAll({
         where: {
             // use the ID from the session
@@ -44,7 +44,57 @@ router.get('/', withAuth, (req, res) => {
         .then(dbPostData => {
             // serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard', { posts, loggedIn: true });
+            res.render('dashboard-admin', { 
+                posts, 
+                loggedIn: true, 
+                isAdmin: req.session.isAdmin 
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+
+// get all votes for a non-admin user
+router.get('/', withAuth, (req, res) => {
+    Vote.findAll({
+        where: {
+            // use the ID from the session
+            user_id: req.session.user_id
+        },
+        include: [
+            {
+                model: Post,
+                attributes: ['id', 'title', 'post_text', 'post_url', 'user_id', 'created_at'],
+                include: {
+                    model: User,
+                    attributes: ['username']
+                },
+                include: {
+                    model: Comment,
+                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                },
+                include: {
+                    model: Vote,
+                    attributes: ['id', 'post_id', 'user_id', 'created_at']
+                }
+            },
+            {
+                model: User,
+                attributes: ['username']
+            }
+        ]
+    })
+        .then(dbVoteData => {
+            // serialize data before passing to template
+            const votes = dbVoteData.map(vote => vote.get({ plain: true }));
+            res.render('dashboard', { 
+                votes, 
+                loggedIn: true,
+                isAdmin: req.session.isAdmin 
+            })
         })
         .catch(err => {
             console.log(err);
@@ -99,7 +149,8 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
             res.render('edit-post', {
                 post,
-                loggedIn: true
+                loggedIn: true,
+                isAdmin: req.session.isAdmin 
             });
         })
         .catch(err => {

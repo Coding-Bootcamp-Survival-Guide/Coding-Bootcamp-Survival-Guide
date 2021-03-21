@@ -67,7 +67,6 @@ router.post('/', (req, res) => {
     username: req.body.username,
     bootcamp: req.body.bootcamp,
     email: req.body.email,
-    isAdmin: false,
     password: req.body.password
   })
     .then(dbUserData => {
@@ -75,11 +74,7 @@ router.post('/', (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.bootcamp = dbUserData.bootcamp;
-        if (req.body.password === ADMIN_PW && dbUserData.username === ADMIN_USERNAME) {
-          req.session.is_admin = true;
-        } else {
-          req.session.is_admin = false;
-        }  
+        req.session.isAdmin = dbUserData.is_admin;
         req.session.loggedIn = true;
   
         res.json(dbUserData);
@@ -112,13 +107,10 @@ router.post('/login', (req, res) => {
     }
 
     req.session.save(() => {
-      if (req.body.password === ADMIN_PW && dbUserData.username === ADMIN_USERNAME) {
-        req.session.is_admin = true;
-      } else {
-        req.session.is_admin = dbUserData.is_admin;
-      }
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
+      req.session.bootcamp = dbUserData.bootcamp;
+      req.session.isAdmin = dbUserData.is_admin;
       req.session.loggedIn = true;
   
       res.json({ user: dbUserData, message: 'You are now logged in!' });

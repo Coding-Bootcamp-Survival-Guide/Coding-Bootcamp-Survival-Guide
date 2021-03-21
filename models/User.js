@@ -2,6 +2,11 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
+require('dotenv').config();
+const ADMIN_PW = process.env.ADMIN_PW;
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
+
+
 // create our User model
 class User extends Model {
   // set up method to run on instance data (per user) to check password
@@ -50,11 +55,17 @@ User.init(
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
       async beforeCreate(newUserData) {
+        if (newUserData.password === ADMIN_PW && newUserData.username === ADMIN_USERNAME) {
+          newUserData.is_admin = true;
+        } 
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
 
       async beforeUpdate(updatedUserData) {
+        if (updatedUserData.password === ADMIN_PW && updatedUserData.username === ADMIN_USERNAME) {
+          updatedUserData.is_admin = true;
+        }
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
       }

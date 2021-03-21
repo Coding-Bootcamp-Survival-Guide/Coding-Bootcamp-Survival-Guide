@@ -50,7 +50,8 @@ router.get('/', (req, res) => {
         // results in a new posts array.
         res.render('homepage', {
           posts,
-          loggedIn: req.session.loggedIn
+          loggedIn: req.session.loggedIn,
+          isAdmin: req.session.isAdmin
         });
     })
     .catch(err => {
@@ -64,7 +65,6 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     }
-    
       res.render('login');  
 });
 
@@ -117,7 +117,8 @@ router.get('/post/:id', (req, res) => {
       res.render('single-post', {
         post,
         loggedIn: req.session.loggedIn,
-        userId: req.session.user_id
+        userId: req.session.user_id,
+        isAdmin: req.session.isAdmin
       });
     })
     .catch(err => {
@@ -125,6 +126,5 @@ router.get('/post/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
 
 module.exports = router;

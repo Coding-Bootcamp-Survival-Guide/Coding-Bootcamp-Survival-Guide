@@ -1,0 +1,21 @@
+
+{{#if isAdmin}}
+  <section>
+    <h2 class="post-new"><a href="/dashboard/new/" >Create a New Post</a></h2>
+  </section>
+
+  {{#if posts.length}}
+    <section>
+        <h2>Admin Posts</h2>
+        <ol class="post-list">
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        </li>
+        {{/each}}
+        </ol>
+    </section>
+  {{/if}}
+{{/if}}
+
