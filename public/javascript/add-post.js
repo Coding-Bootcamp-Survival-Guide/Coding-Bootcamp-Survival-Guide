@@ -2,6 +2,7 @@ async function newFormHandler(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="post-title"]').value;
+    const category = document.querySelector('input[name="post-category"]').value;
     const post_url = document.querySelector('input[name="post-url"]').value;
     const post_text = document.querySelector('textarea[name="post-text"]').value;
   
@@ -9,6 +10,7 @@ async function newFormHandler(event) {
       method: 'POST',
       body: JSON.stringify({
         title,
+        category,
         post_text,
         post_url
       }),

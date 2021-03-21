@@ -16,6 +16,10 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    category: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
     post_url: {
       type: DataTypes.STRING,
       allowNull: false,

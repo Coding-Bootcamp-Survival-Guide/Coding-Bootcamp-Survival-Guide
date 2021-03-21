@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
       'post_text',
       'post_url',
       'title',
+      'category',
       'created_at'
     ],
     include: [
@@ -55,6 +56,7 @@ router.get('/:id', (req, res) => {
       'post_text',
       'post_url',
       'title',
+      'category',
       'created_at'
     ],
     include: [
@@ -98,6 +100,7 @@ router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_text: 'This is text describing the post',post_url: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
     title: req.body.title,
+    category: req.body.category,
     post_text: req.body.post_text,
     post_url: req.body.post_url,
     user_id: req.session.user_id
@@ -114,6 +117,7 @@ router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
+      category: req.body.category,
       post_text: req.body.post_text,
       post_url: req.body.post_url
     },

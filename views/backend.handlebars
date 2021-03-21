@@ -1,0 +1,14 @@
+<section>
+    <h2>Back-End</h2>
+    {{#if posts.length}}
+        <ol class="post-list">
+            {{#each posts as |post|}}
+                {{#if (check_if_equal category 3)}}
+                    <li>
+                        {{> post-info post}}
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ol>
+    {{/if}}
+</section>

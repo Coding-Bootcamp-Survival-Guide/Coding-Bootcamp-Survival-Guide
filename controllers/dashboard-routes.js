@@ -16,6 +16,7 @@ router.get('/admin', withAuth, (req, res) => {
             'post_text',
             'post_url',
             'title',
+            'category',
             'created_at'
         ],
         include: [
@@ -67,7 +68,7 @@ router.get('/', withAuth, (req, res) => {
         include: [
             {
                 model: Post,
-                attributes: ['id', 'title', 'post_text', 'post_url', 'user_id', 'created_at'],
+                attributes: ['id', 'title', 'category', 'post_text', 'post_url', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -113,6 +114,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             'post_text',
             'post_url',
             'title',
+            'category',
             'created_at'
         ],
         include: [

@@ -1,6 +1,5 @@
 async function upvoteClickHandler(event) {
     event.preventDefault();
-    // event.currentTarget.classList.toggle('liked');
     const post_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
@@ -22,7 +21,6 @@ async function upvoteClickHandler(event) {
       }
 
     } else {
-      // const vote_id = document.querySelector('button[class="liked-button"]').class;
       const vote_id_obj = document.querySelector('.liked-button');
       let vote_id = vote_id_obj.id.replace('vote-id-','');  
       const response = await fetch(`/api/votes/${vote_id}`, {
@@ -39,12 +37,5 @@ async function upvoteClickHandler(event) {
       }
     }
   }
-
   
-  // document.querySelector('.upvote-btn').addEventListener('click', upvoteClickHandler);
   document.querySelector('.buttons').addEventListener('click', upvoteClickHandler);
-  //document.querySelector('.liked-button').addEventListener('click', upvoteClickHandler);
-  
-  // document.querySelector('.like-button').addEventListener('click', (e) => {
-  //   upvoteClickHandler;
-  // });

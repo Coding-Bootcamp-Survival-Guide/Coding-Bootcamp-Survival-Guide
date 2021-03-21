@@ -1,19 +1,21 @@
 {{#unless isAdmin}}
-  <section>
+<section>
 
   <h2>Posts You Have Liked</h2>
   {{#if votes.length}}
-    <ol class="vote-list">
-      {{#each votes as |vote|}}
-        <li>
-          {{> post-info vote.post}}
-        </li>
-      {{/each}}
-      </ol>
-      </section>
-    {{/if}}
+  <ol class="vote-list">
+    {{#each votes as |vote|}}
+    <li>
+      {{> post-info vote.post}}
+    </li>
+    {{/each}}
+  </ol>
+  {{/if}}
+</section>
 {{/unless}}
 
 
-{{!-- <script src="/javascript/add-post.js"></script> --}}
-{{!-- <script src="/javascript/new-post.js"></script> --}}
+{{!--
+<script src="/javascript/add-post.js"></script> --}}
+{{!--
+<script src="/javascript/new-post.js"></script> --}}

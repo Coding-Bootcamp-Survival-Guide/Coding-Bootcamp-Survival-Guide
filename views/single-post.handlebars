@@ -12,8 +12,8 @@
   <div>
     {{!-- <button type="button" class="upvote-btn">like</button> --}}
     <div class="buttons">
-{{!--  if I already voted on it the session user id === the vote user id      --}}
-{{!--  if I want to remove the vote i need the vote id with the user id matching the session id      --}}
+    {{!--  if I already voted on it the session user id === the vote user id      --}}
+    {{!--  if I want to remove the vote i need the vote id with the user id matching the session id      --}}
 
       {{#if (check_for_user_id post.votes userId) }}
         {{#each post.votes}}
