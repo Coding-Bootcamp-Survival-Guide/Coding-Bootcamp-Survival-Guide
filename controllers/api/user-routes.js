@@ -1,11 +1,8 @@
 const router = require('express').Router();
+
 const { User, Post, Comment, Vote } = require('../../models');
 
-require('dotenv').config();
-const ADMIN_PW = process.env.ADMIN_PW;
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
-
-// get all users
+//get all users
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
@@ -62,7 +59,7 @@ router.get('/:id', (req, res) => {
 
 // create a user
 router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  // expects {username: 'Lernantino', bootcamp: 'UofA Coding Academy', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
     username: req.body.username,
     bootcamp: req.body.bootcamp,

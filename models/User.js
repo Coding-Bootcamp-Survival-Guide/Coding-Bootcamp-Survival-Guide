@@ -6,7 +6,6 @@ require('dotenv').config();
 const ADMIN_PW = process.env.ADMIN_PW;
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
 
-
 // create our User model
 class User extends Model {
   // set up method to run on instance data (per user) to check password

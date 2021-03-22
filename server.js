@@ -8,22 +8,23 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 3001;
 
-const sequelize = require('./config/connection');
+const sequelize = require("./config/connection");
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const SESS_SECRET = process.env.SESS_SECRET;
 const SESS_TIMEOUT = parseInt(process.env.SESS_TIMEOUT);
 
+// secret: SESS_SECRET,
+// cookie: {
+//   maxAge: SESS_TIMEOUT
+// },
+// rolling: true,
+
 const sess = {
-  secret: 'Super Super Secret',
-secret: SESS_SECRET,
-  cookie: {
-    maxAge: SESS_TIMEOUT
-  },
+  secret: 'Super secret secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  rolling: true,
   store: new SequelizeStore({
     db: sequelize
   })
@@ -44,6 +45,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
+sequelize.sync({ force: true }).then(() => {
+  app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
 });
