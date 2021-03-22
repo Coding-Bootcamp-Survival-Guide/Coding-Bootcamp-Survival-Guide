@@ -21,7 +21,7 @@
     {{!--checking for category 2 (frontend)  --}}
     {{#if (check_for_category votes 2)}}
       {{#each votes as |vote|}}
-        {{#if (check_if_equal vote.post.category 1)}}
+        {{#if (check_if_equal vote.post.category 2)}}
           <h3>Front-End</h3>
           <ol class="vote-list">
             <li>
@@ -35,7 +35,7 @@
     {{!--checking for category 3 (backend)  --}}
     {{#if (check_for_category votes 3)}}
       {{#each votes as |vote|}}
-        {{#if (check_if_equal vote.post.category 1)}}
+        {{#if (check_if_equal vote.post.category 3)}}
           <h3>Back-End</h3>
           <ol class="vote-list">
             <li>
@@ -49,7 +49,7 @@
     {{!--checking for category 4 (backend)  --}}
     {{#if (check_for_category votes 4)}}
       {{#each votes as |vote|}}
-        {{#if (check_if_equal vote.post.category 1)}}
+        {{#if (check_if_equal vote.post.category 4)}}
           <h3>Back-End</h3>
           <ol class="vote-list">
             <li>
