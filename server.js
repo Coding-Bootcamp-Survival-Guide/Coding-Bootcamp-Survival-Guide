@@ -14,14 +14,14 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const SESS_SECRET = process.env.SESS_SECRET;
 const SESS_TIMEOUT = parseInt(process.env.SESS_TIMEOUT);
 
-// secret: SESS_SECRET,
+// code below to add to sess if want to have login sessions timed out
 // cookie: {
 //   maxAge: SESS_TIMEOUT
 // },
 // rolling: true,
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: SESS_SECRET,
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -45,6 +45,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('./controllers/'));
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
 });
