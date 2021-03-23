@@ -8,6 +8,13 @@
   --color-lt2: rgb(248, 248, 144);
   
 }
+
+.dark-mode {
+  --color-lt1: rgba(15, 12, 12, 0.568);
+  --color-lt2: rgb(88, 86, 86);
+  --color-dk1: rgb(248, 248, 241);
+  --color-dk2: rgb(248, 248, 144);
+}
   
 body, html {
   height: 100%;
@@ -17,7 +24,6 @@ body, html {
   font-family: sans-serif;
   background-color: var(--color-dk2);
   color: var(--color-lt1);
-
 }
 
 .wrapper {
