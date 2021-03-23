@@ -4,12 +4,12 @@ const withAuth = require('../utils/auth');
 const { Post, User, Comment, Like } = require('../models');
 
 
-// get all posts in category 3 (tools)
+// get all posts in category 2 (pre-course)
 router.get('/', (req, res) => {
     Post.findAll({
         where: {
             // use the ID from the session
-            category: 3
+            category: 2
         },
         attributes: [
             'id',
@@ -45,7 +45,7 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
             // serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('tools', { 
+            res.render('pre-course', { 
                 posts,
                 loggedIn: req.session.loggedIn,
                 isAdmin: req.session.isAdmin

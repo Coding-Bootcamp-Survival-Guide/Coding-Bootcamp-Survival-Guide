@@ -1,45 +1,45 @@
 const router = require('express').Router();
-const { Vote } = require('../../models');
+const { Like } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
-// get all votes
+// get all likes
 router.get('/', (req, res) => {
-  Vote.findAll()
-    .then(dbVoteData => res.json(dbVoteData))
+  Like.findAll()
+    .then(dbLikeData => res.json(dbLikeData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
 });
 
-// create a vote
+// create a like
 router.post('/', withAuth, (req, res) => {
   // expects => {user_id: 1, post_id: 2}
-  Vote.create({
+  Like.create({
     user_id: req.session.user_id,
     post_id: req.body.post_id
   })
-    .then(dbVoteData => res.json(dbVoteData))
+    .then(dbLikeData => res.json(dbLikeData))
     .catch(err => {
       console.log(err);
       res.status(400).json(err);
     });
 });
 
-// delete a vote with given id
+// delete a like with given id
 router.delete('/:id', withAuth, (req, res) => {
-  Vote.destroy({
+  Like.destroy({
     where: {
       id: req.params.id
     }
   })
-    .then(dbVoteData => {
-      if (!dbVoteData) {
-        res.status(404).json({ message: 'No vote found with this id!' });
+    .then(dbLikeData => {
+      if (!dbLikeData) {
+        res.status(404).json({ message: 'No like found with this id!' });
         return;
       }
-      res.json(dbVoteData);
+      res.json(dbLikeData);
     })
     .catch(err => {
       console.log(err);

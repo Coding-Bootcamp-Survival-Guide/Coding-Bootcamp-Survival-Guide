@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-const { Post, User, Comment, Vote } = require('../models');
+const { Post, User, Comment, Like } = require('../models');
 
 
 // get all posts admin loggedIn user
@@ -33,7 +33,7 @@ router.get('/admin', withAuth, (req, res) => {
                 attributes: ['username']
             },
             {
-                model: Vote,
+                model: Like,
                 attributes: ['id', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
@@ -57,7 +57,7 @@ router.get('/admin', withAuth, (req, res) => {
         });
 });
 
-// get all votes for a non-admin user
+// get all likess for a non-admin user
 // router.get('/', withAuth, (req, res) => {
 //     User.findAll({
 //         where: {
@@ -66,7 +66,7 @@ router.get('/admin', withAuth, (req, res) => {
 //         },
 //         include: [
 //             {
-//                 model: Vote,
+//                 model: Like,
 //                 attributes: ['id', 'post_id', 'user_id', 'created_at'],
 //                 include: {
 //                     model: Post,
@@ -80,7 +80,7 @@ router.get('/admin', withAuth, (req, res) => {
 //                         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']       
 //                     },
 //                     {
-//                         model: Vote,
+//                         model: Like,
 //                         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']       
 //                     }],
                     
@@ -103,9 +103,9 @@ router.get('/admin', withAuth, (req, res) => {
 //         });
 // });
 
-// get all votes for a non-admin user
+// get all likes for a non-admin user
 router.get('/', withAuth, (req, res) => {
-    Vote.findAll({
+    Like.findAll({
         where: {
             // use the ID from the session
             user_id: req.session.user_id
@@ -119,7 +119,7 @@ router.get('/', withAuth, (req, res) => {
                     attributes: ['username']
                 },
                 {
-                    model: Vote,
+                    model: Like,
                     attributes: ['id', 'post_id', 'user_id', 'created_at']
                 },
                 {
@@ -133,11 +133,11 @@ router.get('/', withAuth, (req, res) => {
             }
         ]
     })
-        .then(dbVoteData => {
+        .then(dbLikeData => {
             // serialize data before passing to template
-            const votes = dbVoteData.map(vote => vote.get({ plain: true }));
+            const likes = dbLikeData.map(like => like.get({ plain: true }));
             res.render('dashboard', { 
-                votes, 
+                likes, 
                 loggedIn: true,
                 isAdmin: req.session.isAdmin 
             })
@@ -176,7 +176,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
                 attributes: ['username']
             },
             {
-                model: Vote,
+                model: Like,
                 attributes: ['id', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,

@@ -1,15 +1,15 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-const { Post, User, Comment, Vote } = require('../models');
+const { Post, User, Comment, Like } = require('../models');
 
 
-// get all posts in category 4 (decompress)
+// get all posts in category 1 (pick a camp)
 router.get('/', (req, res) => {
     Post.findAll({
         where: {
             // use the ID from the session
-            category: 4
+            category: 1
         },
         attributes: [
             'id',
@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             },
             {
-                model: Vote,
+                model: Like,
                 attributes: ['id', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
@@ -45,7 +45,7 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
             // serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('decompress', { 
+            res.render('pick-camp', { 
                 posts,
                 loggedIn: req.session.loggedIn,
                 isAdmin: req.session.isAdmin

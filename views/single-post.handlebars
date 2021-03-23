@@ -10,15 +10,14 @@
   </div>
 
   <div>
-    {{!-- <button type="button" class="upvote-btn">like</button> --}}
     <div class="buttons">
-    {{!--  if I already voted on it the session user id === the vote user id      --}}
-    {{!--  if I want to remove the vote i need the vote id with the user id matching the session id      --}}
+    {{!--  if I already liked on it the session user id === the like user id      --}}
+    {{!--  if I want to remove the like i need the like id with the user id matching the session id      --}}
 
-      {{#if (check_for_user_id post.votes userId) }}
-        {{#each post.votes}}
+      {{#if (check_for_user_id post.likes userId) }}
+        {{#each post.likes}}
           {{#if (check_if_equal user_id ../userId)}}
-            <button class="liked-button" type="submit" id="vote-id-{{id}}"></button>
+            <button class="liked-button" type="submit" id="like-id-{{id}}"></button>
           {{/if}}
         {{/each}}
       {{else}}
@@ -34,5 +33,5 @@
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/vote.js"></script>
+<script src="/javascript/like.js"></script>
 {{/if}}
