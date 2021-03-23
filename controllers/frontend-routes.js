@@ -1,15 +1,15 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-const { Post, User, Comment, Vote } = require('../models');
+const { Post, User, Comment, Like } = require('../models');
 
 
-// get all posts in category 2 (front-end)
+// get all posts in category 4 (front-end)
 router.get('/', (req, res) => {
     Post.findAll({
         where: {
             // use the ID from the session
-            category: 2
+            category: 4
         },
         attributes: [
             'id',
@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             },
             {
-                model: Vote,
+                model: Like,
                 attributes: ['id', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,

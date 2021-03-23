@@ -4,7 +4,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 
-const { Post, User, Comment, Vote } = require('../models');
+const { Post, User, Comment, Like } = require('../models');
 
 // Because we've hooked up a template engine, we can now use res.render() and specify which template we want to use. 
 // In this case, we want to render the homepage.handlebars template (the .handlebars extension is implied). 
@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
           attributes: ['username']
         },
         {
-          model: Vote,
+          model: Like,
           attributes: ['id', 'post_id', 'user_id', 'created_at'],
           include: {
             model: User,
@@ -97,7 +97,7 @@ router.get('/post/:id', (req, res) => {
         attributes: ['username']
       },
       {
-        model: Vote,
+        model: Like,
         attributes: ['id', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,

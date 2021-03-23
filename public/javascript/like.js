@@ -1,10 +1,10 @@
-async function voteClickHandler(event) {
+async function likeClickHandler(event) {
     event.preventDefault();
     const post_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
     if (event.target.classList.value === 'like-button') {
-      const response = await fetch('/api/votes', {
+      const response = await fetch('/api/likes', {
         method: 'POST',
         body: JSON.stringify({
           post_id
@@ -21,9 +21,9 @@ async function voteClickHandler(event) {
       }
 
     } else {
-      const vote_id_obj = document.querySelector('.liked-button');
-      let vote_id = vote_id_obj.id.replace('vote-id-','');  
-      const response = await fetch(`/api/votes/${vote_id}`, {
+      const like_id_obj = document.querySelector('.liked-button');
+      let like_id = like_id_obj.id.replace('like-id-','');  
+      const response = await fetch(`/api/likes/${like_id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -38,4 +38,4 @@ async function voteClickHandler(event) {
     }
   }
   
-  document.querySelector('.buttons').addEventListener('click', voteClickHandler);
+  document.querySelector('.buttons').addEventListener('click', likeClickHandler);

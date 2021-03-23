@@ -193,7 +193,7 @@ main {
   color:var(--color-lt1);
 }
   
-.post-list, .vote-list {
+.post-list, .like-list {
   margin: 0;
   padding: 0;
   list-style: none;
