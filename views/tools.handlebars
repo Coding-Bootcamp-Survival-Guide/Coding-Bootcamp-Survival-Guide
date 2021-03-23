@@ -1,5 +1,7 @@
 <section>
     <h2>Tools</h2>
+    {{!-- {{> category-post posts }} --}}
+
     {{#if posts.length}}
         <ol class="post-list">
             {{#each posts as |post|}}
@@ -11,4 +13,5 @@
             {{/each}}
         </ol>
     {{/if}}
+
 </section>

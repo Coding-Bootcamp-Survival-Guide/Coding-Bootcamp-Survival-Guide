@@ -59,7 +59,7 @@ router.get('/admin', withAuth, (req, res) => {
 
 // get all votes for a non-admin user
 // router.get('/', withAuth, (req, res) => {
-//     User.findOne({
+//     User.findAll({
 //         where: {
 //             // use the ID from the session
 //             id: req.session.user_id

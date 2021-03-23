@@ -1,0 +1,12 @@
+<p>posts, {{posts}}</p>
+{{#if posts.length}}
+    <ol class="post-list">
+        {{#each posts as |post|}}
+            {{#if (check_if_equal category data)}}
+                <li>
+                    {{> post-info post}}
+                </li>
+            {{/if}}
+        {{/each}}
+    </ol>
+{{/if}}
