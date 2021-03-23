@@ -21,7 +21,8 @@ const SESS_TIMEOUT = parseInt(process.env.SESS_TIMEOUT);
 // rolling: true,
 
 const sess = {
-  secret: SESS_SECRET,
+  // secret: SESS_SECRET,
+  secret: 'Super Super Secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
