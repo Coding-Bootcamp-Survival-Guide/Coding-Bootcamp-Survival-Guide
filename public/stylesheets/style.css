@@ -85,7 +85,7 @@ nav a:hover, nav button:hover {
   /* font-family: "Neucha"; */
   font-family: "Bad Script";
 
-  /* box-shadow: 10px 5px 5px var(--color-lt2); */
+  box-shadow: 10px 5px 5px var(--color-lt2);
 }
   
 .title-wrapper h1 a {
