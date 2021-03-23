@@ -12,7 +12,8 @@
     "express-session": "^1.17.1",
     "handlebars": "^4.7.3",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.5.0"
+    "sequelize": "^6.5.0",
+    "tailwindcss": "^2.0.4"
   },
   "devDependencies": {},
   "scripts": {
