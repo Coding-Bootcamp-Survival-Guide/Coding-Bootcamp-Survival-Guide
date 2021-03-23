@@ -12,13 +12,17 @@
     "express-session": "^1.17.1",
     "handlebars": "^4.7.3",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.5.0",
+    "sequelize": "^6.5.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.8",
     "tailwindcss": "^2.0.4"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build:css": "tailwind build src/style.css -o public/stylesheets/style.css"
   },
   "repository": {
     "type": "git",
