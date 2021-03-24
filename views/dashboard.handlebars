@@ -6,6 +6,10 @@
   {{#each users}}
     {{#if likes.length}}
 
+      {{!--  would like to send the array likes through and the category=1 --}}
+      {{!-- {{> like-post likes data=1}} --}}
+
+
       {{!--checking for category 1 (picking)  --}}
       {{#if (check_for_category likes 1)}}
         {{#each likes as |like|}}

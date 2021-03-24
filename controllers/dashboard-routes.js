@@ -101,7 +101,8 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
-
+// THE GET ON THE LIKES PRODUCES THE SAME RESULTS AS THE GET ON THE USER FOR ALL OF THEIR LIKES
+// SAVING FOR NOW IN CASE THERE IS A PROBLEM WITH THE GET ON THE USER
 //get all likes for a non-admin user
 // router.get('/', withAuth, (req, res) => {
 //     Like.findAll({
