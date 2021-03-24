@@ -312,6 +312,10 @@ form label {
 .edit-post-form {
   margin-bottom: 5%;
 }
+
+#profile-pic {
+  height: 50px;
+}
   
 footer {
   border-top: 1px solid var(--color-lt2);

@@ -34,6 +34,9 @@ User.init(
     bootcamp: {
         type: DataTypes.STRING,
     },
+    profile_pic: {
+        type: DataTypes.STRING,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -56,6 +59,7 @@ User.init(
       async beforeCreate(newUserData) {
         if (newUserData.password === ADMIN_PW && newUserData.username === ADMIN_USERNAME) {
           newUserData.is_admin = true;
+          if (ADMIN_USERNAME === 'gkps') newUserData.profile_pic = '/assets/images/kash.jpeg'
         } 
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
@@ -64,6 +68,7 @@ User.init(
       async beforeUpdate(updatedUserData) {
         if (updatedUserData.password === ADMIN_PW && updatedUserData.username === ADMIN_USERNAME) {
           updatedUserData.is_admin = true;
+          if (ADMIN_USERNAME === 'gkps') newUserData.profile_pic = '/assets/images/kash.jpeg'
         }
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;

@@ -31,7 +31,7 @@ router.get('/:category_name', (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'profile_pic']
             },
             {
                 model: Like,

@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
         },
         {
           model: User,
-          attributes: ['username']
+          attributes: ['username', 'profile_pic']
         },
         {
           model: Like,
@@ -94,7 +94,7 @@ router.get('/post/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username', 'profile_pic']
       },
       {
         model: Like,

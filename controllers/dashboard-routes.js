@@ -30,7 +30,7 @@ router.get('/admin', withAuth, (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'profile_pic']
             },
             {
                 model: Like,
@@ -73,7 +73,7 @@ router.get('/', withAuth, (req, res) => {
                     attributes: ['id', 'title', 'category', 'post_text', 'post_url', 'user_id', 'created_at'],
                     include: [ {
                         model: User,
-                        attributes: ['username']
+                        attributes: ['username', 'profile_pic']
                     },
                     {                        
                         model: Like,
@@ -173,7 +173,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'profile_pic']
             },
             {
                 model: Like,
