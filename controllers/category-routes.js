@@ -6,11 +6,11 @@ const { Post, User, Comment, Like } = require('../models');
 //get all posts in category 1 (pick a camp)
 router.get('/:category_name', (req, res) => {
     const categoryNames = ['pick-camp', 'pre-course', 'tools', 'frontend', 'backend', 'self-care'];
-    let category = categoryNames.indexOf(category_name) + 1;
+    let selectedCategory = categoryNames.indexOf(category_name) + 1;
     Post.findAll({
         where: {
             // use the ID from the session
-            category: category
+            category: selectedCategory
         },
         attributes: [
             'id',
