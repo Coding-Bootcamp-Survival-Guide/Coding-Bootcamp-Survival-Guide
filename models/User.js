@@ -57,18 +57,27 @@ User.init(
     hooks: {
       // set up beforeCreate lifecycle "hook" functionality
       async beforeCreate(newUserData) {
-        if (newUserData.password === ADMIN_PW && newUserData.username === ADMIN_USERNAME) {
+        // if (newUserData.password === ADMIN_PW && newUserData.username === ADMIN_USERNAME) {
+        //   newUserData.is_admin = true;
+        if (newUserData.password === ADMIN_PW && (ADMIN_USERNAME.indexOf(newUserData.username) > -1 )) {
           newUserData.is_admin = true;
-          if (ADMIN_USERNAME === 'gkps') newUserData.profile_pic = '/assets/images/kash.jpeg'
-        } 
+          // if (ADMIN_USERNAME === 'gkps') newUserData.profile_pic = '/assets/images/kash.jpeg'
+          if (ADMIN_USERNAME.indexOf(newUserData.username) > -1 ) {
+            newUserData.profile_pic = `/assets/images/${newUserData.username}.jpeg`;
+          } 
+        }
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
-
       async beforeUpdate(updatedUserData) {
-        if (updatedUserData.password === ADMIN_PW && updatedUserData.username === ADMIN_USERNAME) {
+        // if (updatedUserData.password === ADMIN_PW && updatedUserData.username === ADMIN_USERNAME) {
+        //   updatedUserData.is_admin = true;
+        if (updatedUserData.password === ADMIN_PW && (ADMIN_USERNAME.indexOf(updatedUserData.username) > -1 )) {
           updatedUserData.is_admin = true;
-          if (ADMIN_USERNAME === 'gkps') newUserData.profile_pic = '/assets/images/kash.jpeg'
+          // if (ADMIN_USERNAME === 'gkps') newUserData.profile_pic = '/assets/images/kash.jpeg'
+          if (ADMIN_USERNAME.indexOf(updatedUserData.username) > -1 ) {
+            updatedUserData.profile_pic = `/assets/images/${updatedUserData.username}.jpeg`;
+          }
         }
         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
         return updatedUserData;
