@@ -12,6 +12,7 @@ const toolsRoutes = require('./tools-routes.js');
 const frontendRoutes = require('./frontend-routes.js');
 const backendRoutes = require('./backend-routes.js');
 const selfCareRoutes = require('./self-care-routes.js');
+//const categoryRoutes = require('./category-routes.js');
 
 router.use('/', homeRoutes);
 
@@ -28,6 +29,8 @@ router.use('/frontend', frontendRoutes);
 router.use('/backend', backendRoutes);
 
 router.use('/self-care', selfCareRoutes);
+
+// router.use('/self-care', categoryRoutes) 
 
 router.use('/api', apiRoutes);
 

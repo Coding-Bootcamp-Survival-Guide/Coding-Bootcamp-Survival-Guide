@@ -4,6 +4,8 @@
   <h2>Your Saved Posts</h2>
   {{#if likes.length}}
 
+    {{!-- {{> category-post posts data=1}} --}}
+
     {{!--checking for category 1 (picking)  --}}
     {{#if (check_for_category likes 1)}}
       {{#each likes as |like|}}
@@ -17,6 +19,8 @@
         {{/if}}
       {{/each}}
     {{/if}}
+    
+
 
     {{!--checking for category 2 (precourse)  --}}
     {{#if (check_for_category likes 2)}}

@@ -83,7 +83,6 @@ router.get('/admin', withAuth, (req, res) => {
 //                         model: Like,
 //                         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']       
 //                     }],
-                    
 //                 }
 //             }
 //         ]
@@ -103,7 +102,7 @@ router.get('/admin', withAuth, (req, res) => {
 //         });
 // });
 
-// get all likes for a non-admin user
+//get all likes for a non-admin user
 router.get('/', withAuth, (req, res) => {
     Like.findAll({
         where: {
