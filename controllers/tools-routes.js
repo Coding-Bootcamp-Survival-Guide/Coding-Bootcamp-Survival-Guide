@@ -30,14 +30,14 @@ router.get('/', (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'profile_pic', 'bootcamp']
             },
             {
                 model: Like,
                 attributes: ['id', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
-                    attributes: ['username', 'profile_pic']
+                    attributes: ['username']
                 }
             }
         ]

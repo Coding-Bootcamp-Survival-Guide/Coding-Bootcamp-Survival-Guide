@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username', 'profile_pic']
+                attributes: ['username', 'profile_pic', 'bootcamp']
             },
             {
                 model: Like,
