@@ -16,11 +16,21 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    category: {
-      type: DataTypes.INTEGER,
+    category_name: {
+      type: DataTypes.STRING,
       allowNull: false
     },
+    category_id: {
+      type: DataTypes.INTEGER,
+    },
     post_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isURL: true
+      }
+    },
+    post_image: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {

@@ -4,21 +4,23 @@ const withAuth = require('../utils/auth');
 const { Post, User, Comment, Like } = require('../models');
 
 //get all posts in category 1 (pick a camp)
-router.get('/:category', (req, res) => {
-    const categoryNames = ['pick-camp', 'pre-course', 'tools', 'frontend', 'backend', 'self-care'];
-    const category = req.params.category;
-    let categoryName = categoryNames[category-1];
+router.get('/:category_id', (req, res) => {
+    const categoryNames = ['pick-camp', 'pre-course', 'tools', 'frontend', 'backend', 'self-care', 'finish-line'];
+    const category_id = req.params.category_id;
+    let categoryName = categoryNames[category_id-1];
     Post.findAll({
         where: {
             // use the ID from the session
-            category: category
+            category_id: category_id
         },
         attributes: [
             'id',
             'post_text',
             'post_url',
+            'post_image',
             'title',
-            'category',
+            'category_name',
+            'category_id',
             'created_at'
         ],
         include: [

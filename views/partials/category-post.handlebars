@@ -2,7 +2,7 @@
 {{#if posts.length}}
     <ol class="post-list">
         {{#each posts as |post|}}
-            {{#if (check_if_equal category data)}}
+            {{#if (check_if_equal category_id data)}}
                 <li>
                     {{> post-info post}}
                 </li>

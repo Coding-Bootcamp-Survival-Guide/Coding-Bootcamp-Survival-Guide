@@ -8,13 +8,30 @@
       <label for="post-title">Title</label>
       <input name="post-title" type="text" value="{{post.title}}" />
     </div>
-        <div>
-      <label for="post-category">Category (1 = pick a camp, 2 = pre-course, 3 = tools, 4 = front-end, 5 = back-end, 6 = decompress)</label>
-      <input id="post-category" name="post-category" value="{{post.category}}" />
+    <div>
+      <label for="post-category">Choose a category:</label>
+      <select id="post-category" name="post-category">
+        <option value="pick-camp">Pick a Bootcamp</option>
+        <option value="pre-course">Pre-Course Prep</option>
+        <option value="tools">Tools & Cheatsheets</option>
+        <option value="frontend">Front End</option>
+        <option value="backend">Back End</option>
+        <option value="self-care">Self Care</option>
+        <option value="finish-line">Finish Line</option>
+      </select>
     </div>
+
+    {{!-- <div>
+      <label for="post-category">Category (1 = pick a camp, 2 = pre-course, 3 = tools, 4 = front-end, 5 = back-end, 6 = decompress)</label>
+      <input id="post-category" name="post-category" value="{{post.category_id}}" />
+    </div> --}}
     <div>
       <label for="post-url">Link</label>
       <input id="post-url" name="post-url" value="{{post.post_url}}" />
+    </div>
+    <div>
+      <label for="post-image">Post Image URL</label>
+      <input id="post-image" name="post-image" value="{{post.post_image}}" />
     </div>
     <div>
       {{!-- <input name="post-text" type="text" value="{{post.post_text}}" /> --}}

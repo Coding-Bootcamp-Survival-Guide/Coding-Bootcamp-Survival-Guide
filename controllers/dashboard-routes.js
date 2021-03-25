@@ -15,8 +15,10 @@ router.get('/admin', withAuth, (req, res) => {
             'id',
             'post_text',
             'post_url',
+            'post_image',
             'title',
-            'category',
+            'category_id',
+            'category_name',
             'created_at'
         ],
         include: [
@@ -70,7 +72,7 @@ router.get('/', withAuth, (req, res) => {
                 attributes: ['id', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: Post,
-                    attributes: ['id', 'title', 'category', 'post_text', 'post_url', 'user_id', 'created_at'],
+                    attributes: ['id', 'title', 'category_id', 'category_name', 'post_text', 'post_url', 'post_image', 'user_id', 'created_at'],
                     include: [ {
                         model: User,
                         attributes: ['username', 'profile_pic', 'bootcamp']
@@ -158,8 +160,10 @@ router.get('/edit/:id', withAuth, (req, res) => {
             'id',
             'post_text',
             'post_url',
+            'post_image',
             'title',
-            'category',
+            'category_id',
+            'category_name',
             'created_at'
         ],
         include: [
@@ -190,7 +194,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
                 res.status(404).json({ message: 'No post found with this id' });
                 return;
             }
-
+            const categoryNames = ["pick-camp", "pre-course", "tools", "frontend", "backend", "self-care", "finish-line"];
+            let category_id = categoryNames.indexOf(dbPostData.category_name) + 1;
+            dbPostData.category_id = category_id;
             // serialize the data
             const post = dbPostData.get({ plain: true });
 

@@ -25,10 +25,10 @@ module.exports = {
       }
       return found;
     },
-    check_for_category: (array, category) => {
+    check_for_category: (array, category_id) => {
       let found = false
       for (i = 0; i < array.length; i++) {
-        if (array[i].post.category === category) found = true;
+        if (array[i].post.category_id === category_id) found = true;
       }
       return found;
     },
