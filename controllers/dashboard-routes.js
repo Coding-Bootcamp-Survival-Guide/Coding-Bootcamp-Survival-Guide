@@ -30,7 +30,7 @@ router.get('/admin', withAuth, (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username', 'profile_pic']
+                attributes: ['username', 'profile_pic', 'bootcamp']
             },
             {
                 model: Like,
@@ -57,7 +57,7 @@ router.get('/admin', withAuth, (req, res) => {
         });
 });
 
-// get all likess for a non-admin user
+// get all likes for a non-admin user
 router.get('/', withAuth, (req, res) => {
     User.findAll({
         where: {
@@ -73,7 +73,7 @@ router.get('/', withAuth, (req, res) => {
                     attributes: ['id', 'title', 'category', 'post_text', 'post_url', 'user_id', 'created_at'],
                     include: [ {
                         model: User,
-                        attributes: ['username', 'profile_pic']
+                        attributes: ['username', 'profile_pic', 'bootcamp']
                     },
                     {                        
                         model: Like,
@@ -129,7 +129,7 @@ router.get('/', withAuth, (req, res) => {
 //             },
 //             {  
 //                 model: User,
-//                 attributes: ['username']
+//                 attributes: ['username', 'profile_pic', 'bootcamp']
 //             }
 //         ]
 //     })
@@ -173,7 +173,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username', 'profile_pic']
+                attributes: ['username', 'profile_pic', 'bootcamp']
             },
             {
                 model: Like,

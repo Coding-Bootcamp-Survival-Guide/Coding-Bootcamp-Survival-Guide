@@ -1,9 +1,13 @@
 {{!-- USED BY controllers/home-routes.js --}}
+<section class="home-page">
+<h1>This is the Home Page</h1>
+<p>There will be lots of content here</p>
+</section>
 
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
+ <button class='goto-dashboard' type="submit">My Dashboard</button>
+ <button class='goto-pick-camp' type="submit">Pick a Camp</button>
+ <button class='goto-pre-course' type="submit">Pre-Course Prep</button>
+ <button class='goto-frontend' type="submit">Front End</button>
+ <button class='goto-backend' type="submit">Back-End</button>
+ <button class='goto-finish-line' type="submit">Self-Care</button>
+ <button class='goto-finish-line' type="submit">Finish Line</button>

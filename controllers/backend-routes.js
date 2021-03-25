@@ -25,12 +25,12 @@ router.get('/', (req, res) => {
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
-                    attributes: ['username', 'profile_pic']
+                    attributes: ['username']
                 }
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'profile_pic', 'bootcamp']
             },
             {
                 model: Like,

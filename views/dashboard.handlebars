@@ -11,7 +11,7 @@
 
 
       {{!--checking for category 1 (picking)  --}}
-      {{#if (check_for_category likes 1)}}
+      {{!-- {{#if (check_for_category likes 1)}} --}}
         {{#each likes as |like|}}
           {{#if (check_if_equal like.post.category 1)}}
             <h3>Picking a Bootcamp</h3>
@@ -22,7 +22,7 @@
             </ol>
           {{/if}}
         {{/each}}
-      {{/if}}
+      {{!-- {{/if}} --}}
 
       {{!--checking for category 2 (precourse)  --}}
       {{#if (check_for_category likes 2)}}
