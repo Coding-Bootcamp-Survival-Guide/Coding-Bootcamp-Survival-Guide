@@ -4,9 +4,14 @@ const withAuth = require('../utils/auth');
 const { Post, User, Comment, Like } = require('../models');
 
 //get all posts in category 1 (pick a camp)
-router.get('/:category_name', (req, res) => {
+router.get('/:category', (req, res) => {
     const categoryNames = ['pick-camp', 'pre-course', 'tools', 'frontend', 'backend', 'self-care'];
+<<<<<<< HEAD
     let selectedCategory = categoryNames.indexOf(category_name) + 1;
+=======
+    const category = req.params.category;
+    let categoryName = categoryNames[category-1];
+>>>>>>> a52ec0640432aade0dd3c6830ac105f75986449f
     Post.findAll({
         where: {
             // use the ID from the session
@@ -31,7 +36,7 @@ router.get('/:category_name', (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'profile_pic']
             },
             {
                 model: Like,
@@ -46,7 +51,7 @@ router.get('/:category_name', (req, res) => {
         .then(dbPostData => {
             // serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render(category_name, { 
+            res.render(categoryName, { 
                 posts,
                 loggedIn: req.session.loggedIn,
                 isAdmin: req.session.isAdmin
