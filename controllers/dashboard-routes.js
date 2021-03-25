@@ -30,7 +30,7 @@ router.get('/admin', withAuth, (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'profile_pic', 'bootcamp']
             },
             {
                 model: Like,
@@ -57,87 +57,41 @@ router.get('/admin', withAuth, (req, res) => {
         });
 });
 
-// get all likess for a non-admin user
-// router.get('/', withAuth, (req, res) => {
-//     User.findAll({
-//         where: {
-//             // use the ID from the session
-//             id: req.session.user_id
-//         },
-//         include: [
-//             {
-//                 model: Like,
-//                 attributes: ['id', 'post_id', 'user_id', 'created_at'],
-//                 include: {
-//                     model: Post,
-//                     attributes: ['id', 'title', 'category', 'post_text', 'post_url', 'user_id', 'created_at'],
-//                     include: [ {
-//                         model: User,
-//                         attributes: ['username']
-//                     },
-//                     {
-//                         model: Comment,
-//                         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']       
-//                     },
-//                     {
-//                         model: Like,
-//                         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']       
-//                     }],
-                    
-//                 }
-//             }
-//         ]
-//     })
-//         .then(dbUserData => {
-//             // serialize data before passing to template
-//             const users = dbUserData.map(user => user.get({ plain: true }));
-//             res.render('dashboard', { 
-//                 users, 
-//                 loggedIn: true,
-//                 isAdmin: req.session.isAdmin 
-//             })
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
-
 // get all likes for a non-admin user
 router.get('/', withAuth, (req, res) => {
-    Like.findAll({
+    User.findAll({
         where: {
             // use the ID from the session
-            user_id: req.session.user_id
+            id: req.session.user_id
         },
         include: [
             {
-                model: Post,
-                attributes: ['id', 'title', 'category', 'post_text', 'post_url', 'user_id', 'created_at'],
-                include: [ {
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Like,
-                    attributes: ['id', 'post_id', 'user_id', 'created_at']
-                },
-                {
-                    model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']
-                } ]
-            },
-            {  
-                model: User,
-                attributes: ['username']
+                model: Like,
+                attributes: ['id', 'post_id', 'user_id', 'created_at'],
+                include: {
+                    model: Post,
+                    attributes: ['id', 'title', 'category', 'post_text', 'post_url', 'user_id', 'created_at'],
+                    include: [ {
+                        model: User,
+                        attributes: ['username', 'profile_pic', 'bootcamp']
+                    },
+                    {                        
+                        model: Like,
+                        attributes: ['id', 'post_id', 'user_id', 'created_at']       
+                    },
+                    {
+                        model: Comment,
+                        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']       
+                    }],
+                }
             }
         ]
     })
-        .then(dbLikeData => {
+        .then(dbUserData => {
             // serialize data before passing to template
-            const likes = dbLikeData.map(like => like.get({ plain: true }));
+            const users = dbUserData.map(user => user.get({ plain: true }));
             res.render('dashboard', { 
-                likes, 
+                users, 
                 loggedIn: true,
                 isAdmin: req.session.isAdmin 
             })
@@ -147,6 +101,52 @@ router.get('/', withAuth, (req, res) => {
             res.status(500).json(err);
         });
 });
+// THE GET ON THE LIKES PRODUCES THE SAME RESULTS AS THE GET ON THE USER FOR ALL OF THEIR LIKES
+// SAVING FOR NOW IN CASE THERE IS A PROBLEM WITH THE GET ON THE USER
+//get all likes for a non-admin user
+// router.get('/', withAuth, (req, res) => {
+//     Like.findAll({
+//         where: {
+//             // use the ID from the session
+//             user_id: req.session.user_id
+//         },
+//         include: [
+//             {
+//                 model: Post,
+//                 attributes: ['id', 'title', 'category', 'post_text', 'post_url', 'user_id', 'created_at'],
+//                 include: [ {
+//                     model: User,
+//                     attributes: ['username']
+//                 },
+//                 {
+//                     model: Like,
+//                     attributes: ['id', 'post_id', 'user_id', 'created_at']
+//                 },
+//                 {
+//                     model: Comment,
+//                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']
+//                 } ]
+//             },
+//             {  
+//                 model: User,
+//                 attributes: ['username', 'profile_pic', 'bootcamp']
+//             }
+//         ]
+//     })
+//         .then(dbLikeData => {
+//             // serialize data before passing to template
+//             const likes = dbLikeData.map(like => like.get({ plain: true }));
+//             res.render('dashboard', { 
+//                 likes, 
+//                 loggedIn: true,
+//                 isAdmin: req.session.isAdmin 
+//             })
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
 
 // find a single post
 router.get('/edit/:id', withAuth, (req, res) => {
@@ -173,7 +173,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'profile_pic', 'bootcamp']
             },
             {
                 model: Like,

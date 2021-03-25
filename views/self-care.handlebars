@@ -1,5 +1,9 @@
 <section>
     <h2>Self-Care</h2>
+
+    {{!-- posts is an array of objects I would like to pass through the partial category-posts --}}
+    {{!-- {{>category-post posts}} --}}
+    
     {{#if posts.length}}
         <ol class="post-list">
             {{#each posts as |post|}}

@@ -3,8 +3,7 @@ const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const { Post, User, Comment, Like } = require('../models');
 
-
-// get all posts in category 1 (pick a camp)
+//get all posts in category 1 (pick a camp)
 router.get('/', (req, res) => {
     Post.findAll({
         where: {
@@ -30,7 +29,7 @@ router.get('/', (req, res) => {
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['username', 'profile_pic']
             },
             {
                 model: Like,

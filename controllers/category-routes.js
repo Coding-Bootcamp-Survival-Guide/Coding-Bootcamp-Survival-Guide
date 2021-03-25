@@ -3,13 +3,15 @@ const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const { Post, User, Comment, Like } = require('../models');
 
-
-// get all posts in category 2 (pre-course)
-router.get('/', (req, res) => {
+//get all posts in category 1 (pick a camp)
+router.get('/:category', (req, res) => {
+    const categoryNames = ['pick-camp', 'pre-course', 'tools', 'frontend', 'backend', 'self-care'];
+    const category = req.params.category;
+    let categoryName = categoryNames[category-1];
     Post.findAll({
         where: {
             // use the ID from the session
-            category: 2
+            category: category
         },
         attributes: [
             'id',
@@ -45,7 +47,7 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
             // serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('pre-course', { 
+            res.render(categoryName, { 
                 posts,
                 loggedIn: req.session.loggedIn,
                 isAdmin: req.session.isAdmin
