@@ -18,11 +18,6 @@
         <header>
 
             <nav>
-                {{!-- 14.3.7 we are checking for loggedIn in the main layout, but we're only passing loggedIn to the
-                single-post.handlebars
-                template. Fortunately, variables that are passed to view templates are automatically passed to the main
-                layout. --}}
-                {{!-- <a href="/">home</a> --}}
                 {{#if loggedIn}}
                     {{#if isAdmin}}
                         <a href="/dashboard/admin">dashboard</a>
