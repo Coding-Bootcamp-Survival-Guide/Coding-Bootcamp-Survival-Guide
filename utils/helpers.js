@@ -25,6 +25,7 @@ module.exports = {
       }
       return found;
     },
+    /*
     check_for_category: (array, category_id) => {
       let found = false
       for (i = 0; i < array.length; i++) {
@@ -32,6 +33,7 @@ module.exports = {
       }
       return found;
     },
+    */
     check_if_equal: (a, b) => {
       if (a === b) return true;
       else return false;

@@ -47,10 +47,10 @@ router.get('/admin', withAuth, (req, res) => {
         .then(dbPostData => {
             // serialize data before passing to template
             const posts = dbPostData.map(post => post.get({ plain: true }));
-            res.render('dashboard-admin', { 
-                posts, 
-                loggedIn: true, 
-                isAdmin: req.session.isAdmin 
+            res.render('dashboard-admin', {
+                posts,
+                loggedIn: true,
+                isAdmin: req.session.isAdmin
             });
         })
         .catch(err => {
@@ -73,17 +73,17 @@ router.get('/', withAuth, (req, res) => {
                 include: {
                     model: Post,
                     attributes: ['id', 'title', 'category_id', 'category_name', 'post_text', 'post_url', 'post_image', 'user_id', 'created_at'],
-                    include: [ {
+                    include: [{
                         model: User,
                         attributes: ['username', 'profile_pic', 'bootcamp']
                     },
-                    {                        
+                    {
                         model: Like,
-                        attributes: ['id', 'post_id', 'user_id', 'created_at']       
+                        attributes: ['id', 'post_id', 'user_id', 'created_at']
                     },
                     {
                         model: Comment,
-                        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']       
+                        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at']
                     }],
                 }
             }
@@ -92,10 +92,78 @@ router.get('/', withAuth, (req, res) => {
         .then(dbUserData => {
             // serialize data before passing to template
             const users = dbUserData.map(user => user.get({ plain: true }));
-            res.render('dashboard', { 
-                users, 
+
+            console.log(users)
+
+
+            let cat1Likes = []
+            let cat2Likes = []
+            let cat3Likes = []
+            let cat4Likes = []
+            let cat5Likes = []
+            let cat6Likes = []
+            let cat7Likes = []
+
+            /*
+            users.forEach((user) => {
+                switch (users.likes) {
+                    case "pick-camp":
+                        cat1Likes.push(users.likes)
+                        break;
+                    case "pre-course":
+                        cat2Likes(users.likes)
+                        break;
+                    case "tools":
+                        cat3Likes(users.likes)
+                        break;
+                    case "frontend":
+                        cat4Likes(users.likes)
+                        break;
+                    case "backend":
+                        cat4Likes(users.likes)
+                        break;
+                    case "self-care":
+                        cat4Likes(users.likes)
+                        break;
+                    case "finish-line":
+                        cat4Likes(users.likes)
+                        break;
+                }
+            })
+            */
+            users.forEach(user => {
+                if (user.likes.length > 0) {
+                    user.likes.forEach(like => {
+                        if (like.post.category_name === 'pick-camp') {
+                            cat1Likes.push(like.post)
+                        } else if (like.post.category_name === 'pre-course') {
+                            cat2Likes.push(like.post)
+                        } else if (like.post.category_name === 'tools') {
+                            cat3Likes.push(like.post)
+                        } else if (like.post.category_name === 'frontend') {
+                            cat4Likes.push(like.post)
+                        } else if (like.post.category_name === 'backend') {
+                            cat5Likes.push(like.post)
+                        } else if (like.post.category_name === 'self-care') {
+                            cat6Likes.push(like.post)
+                        } else if (like.post.category_name === 'finish-line') {
+                            cat7Likes.push(like.post)
+                        }
+                    })
+                }
+            })
+
+            res.render('dashboard', {
+                users,
+                cat1Likes,
+                cat2Likes,
+                cat3Likes,
+                cat4Likes,
+                cat5Likes,
+                cat6Likes,
+                cat7Likes,
                 loggedIn: true,
-                isAdmin: req.session.isAdmin 
+                isAdmin: req.session.isAdmin
             })
         })
         .catch(err => {
@@ -203,7 +271,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             res.render('edit-post', {
                 post,
                 loggedIn: true,
-                isAdmin: req.session.isAdmin 
+                isAdmin: req.session.isAdmin
             });
         })
         .catch(err => {

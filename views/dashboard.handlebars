@@ -1,114 +1,83 @@
 {{#unless isAdmin}}
-  <section>
-
+<section>
   <h2>Your Saved Posts</h2>
-  <p>{{users.likes.length}}</p>
-  {{#each users}}
-    {{#if likes.length}}
 
-      {{!--  would like to send the array likes through and the category=1 --}}
-      {{!-- {{> like-post likes data=1}} --}}
-
-
-      {{!--checking for category 1 (picking)  --}}
-      {{!-- {{#if (check_for_category likes 1)}} --}}
-        {{#each likes as |like|}}
-          {{#if (check_if_equal like.post.category_id 1)}}
-            <h3>Picking a Bootcamp</h3>
-            <ol class="like-list">
-              <li>
-                {{> post-info like.post}}
-              </li>
-            </ol>
-          {{/if}}
-        {{/each}}
-      {{!-- {{/if}} --}}
-
-      {{!--checking for category 2 (precourse)  --}}
-      {{#if (check_for_category likes 2)}}
-        {{#each likes as |like|}}
-          {{#if (check_if_equal like.post.category_id 2)}}
-            <h3>Pre-Course Work</h3>
-            <ol class="like-list">
-              <li>
-                {{> post-info like.post}}
-              </li>
-            </ol>
-          {{/if}}
-        {{/each}}
-      {{/if}}
-
-      {{!--checking for category 3 (tools)  --}}
-      {{#if (check_for_category likes 3)}}
-        {{#each likes as |like|}}
-          {{#if (check_if_equal like.post.category_id 3)}}
-            <h3>CheatSheets &amp; Tools</h3>
-            <ol class="like-list">
-              <li>
-                {{> post-info like.post}}
-              </li>
-            </ol>
-          {{/if}}
-        {{/each}}
-      {{/if}}
-
-      {{!--checking for category 4 (frontend)  --}}
-      {{#if (check_for_category likes 4)}}
-        {{#each likes as |like|}}
-          {{#if (check_if_equal like.post.category_id 4)}}
-            <h3>Front-End</h3>
-            <ol class="like-list">
-              <li>
-                {{> post-info like.post}}
-              </li>
-            </ol>
-          {{/if}}
-        {{/each}}
-      {{/if}}
-
-      {{!--checking for category 5 (backend)  --}}
-      {{#if (check_for_category likes 5)}}
-        {{#each likes as |like|}}
-          {{#if (check_if_equal like.post.category_id 5)}}
-            <h3>Back-End</h3>
-            <ol class="like-list">
-              <li>
-                {{> post-info like.post}}
-              </li>
-            </ol>
-          {{/if}}
-        {{/each}}
-      {{/if}}
-
-      {{!--checking for category 6 (self-care)  --}}
-      {{#if (check_for_category likes 6)}}
-        {{#each likes as |like|}}
-          {{#if (check_if_equal like.post.category_id 6)}}
-            <h3>Self-Care</h3>
-            <ol class="like-list">
-              <li>
-                {{> post-info like.post}}
-              </li>
-            </ol>
-          {{/if}}
-        {{/each}}
-      {{/if}}
-
-      {{!--checking for category 7 (finish-line)  --}}
-      {{#if (check_for_category likes 7)}}
-        {{#each likes as |like|}}
-          {{#if (check_if_equal like.post.category_id 7)}}
-            <h3>Self-Care</h3>
-            <ol class="like-list">
-              <li>
-                {{> post-info like.post}}
-              </li>
-            </ol>
-          {{/if}}
-        {{/each}}
-      {{/if}}
-
-    {{/if}}
+  {{#if cat1Likes.length}}
+  {{#each cat1Likes as |likedPost|}}
+  <h3>Picking a Bootcamp</h3>
+  <ol class="like-list">
+    <li>
+      {{> post-info likedPost}}
+    </li>
+  </ol>
   {{/each}}
-  </section>
+  {{/if}}
+
+  {{#if cat2Likes.length}}
+  {{#each cat2Likes as |likedPost|}}
+  <h3>Pre-course Prep</h3>
+  <ol class="like-list">
+    <li>
+      {{> post-info likedPost}}
+    </li>
+  </ol>
+  {{/each}}
+  {{/if}}
+
+  {{#if cat3Likes.length}}
+  {{#each cat3Likes as |likedPost|}}
+  <h3>Cheatsheets &amp; Tools</h3>
+  <ol class="like-list">
+    <li>
+      {{> post-info likedPost}}
+    </li>
+  </ol>
+  {{/each}}
+  {{/if}}
+
+  {{#if cat4Likes.length}}
+  {{#each cat4Likes as |likedPost|}}
+  <h3>Front-end</h3>
+  <ol class="like-list">
+    <li>
+      {{> post-info likedPost}}
+    </li>
+  </ol>
+  {{/each}}
+  {{/if}}
+
+  {{#if cat5Likes.length}}
+  {{#each cat5Likes as |likedPost|}}
+  <h3>Back-end</h3>
+  <ol class="like-list">
+    <li>
+      {{> post-info likedPost}}
+    </li>
+  </ol>
+  {{/each}}
+  {{/if}}
+
+  {{#if cat6Likes.length}}
+  {{#each cat6Likes as |likedPost|}}
+  <h3>Self-care</h3>
+  <ol class="like-list">
+    <li>
+      {{> post-info likedPost}}
+    </li>
+  </ol>
+  {{/each}}
+  {{/if}}
+
+  {{#if cat7Likes.length}}
+  {{#each cat7Likes as |likedPost|}}
+  <h3>Finish-line</h3>
+  <ol class="like-list">
+    <li>
+      {{> post-info likedPost}}
+    </li>
+  </ol>
+  {{/each}}
+  {{/if}}
+
+</section>
 {{/unless}}
