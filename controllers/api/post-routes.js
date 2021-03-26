@@ -11,8 +11,10 @@ router.get('/', (req, res) => {
       'id',
       'post_text',
       'post_url',
+      'post_image',
       'title',
-      'category',
+      'category_id',
+      'category_name',
       'created_at'
     ],
     include: [
@@ -55,8 +57,10 @@ router.get('/:id', (req, res) => {
       'id',
       'post_text',
       'post_url',
+      'post_image',
       'title',
-      'category',
+      'category_id',
+      'category_name',
       'created_at'
     ],
     include: [
@@ -98,14 +102,21 @@ router.get('/:id', (req, res) => {
 // create a post
 router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_text: 'This is text describing the post',post_url: 'https://taskmaster.com/press', user_id: 1}
+  const categoryNames = ["pick-camp", "pre-course", "tools", "frontend", "backend", "self-care", "finish-line"];
+  let category_id = categoryNames.indexOf(req.body.category_name) + 1;
+  
   Post.create({
     title: req.body.title,
-    category: req.body.category,
+    category_name: req.body.category_name,
+    category_id: category_id,
     post_text: req.body.post_text,
     post_url: req.body.post_url,
+    post_image: req.body.post_image,
     user_id: req.session.user_id
   })
-    .then(dbPostData => res.json(dbPostData))
+    .then(dbPostData => {
+      res.json(dbPostData)
+    })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -114,13 +125,18 @@ router.post('/', withAuth, (req, res) => {
 
 // update the title, text or URL of the post
 router.put('/:id', withAuth, (req, res) => {
+  const categoryNames = ["pick-camp", "pre-course", "tools", "frontend", "backend", "self-care", "finish-line"];
+  let category_id = categoryNames.indexOf(req.body.category_name) + 1;
+
   Post.update(
     {
       title: req.body.title,
-      category: req.body.category,
+      category_name: req.body.category_name,
+      category_id: category_id,
       post_text: req.body.post_text,
-      post_url: req.body.post_url
-    },
+      post_url: req.body.post_url,
+      post_image: req.body.post_image
+      },
     {
       where: {
         id: req.params.id
@@ -132,6 +148,10 @@ router.put('/:id', withAuth, (req, res) => {
       res.status(404).json({ message: 'No post found with this id' });
       return;
     }
+    const categoryNames = ["pick-camp", "pre-course", "tools", "frontend", "backend", "self-care", "finish-line"];
+    let category_id = categoryNames.indexOf(dbPostData.category_name) + 1;
+    dbPostData.category_id = category_id;
+  
     res.json(dbPostData);
   })
   .catch(err => {

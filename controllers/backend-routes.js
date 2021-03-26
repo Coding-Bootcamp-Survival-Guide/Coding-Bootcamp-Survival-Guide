@@ -15,8 +15,10 @@ router.get('/', (req, res) => {
             'id',
             'post_text',
             'post_url',
+            'post_image',
             'title',
-            'category',
+            'category_id',
+            'category_name',
             'created_at'
         ],
         include: [

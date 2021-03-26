@@ -1,9 +1,11 @@
 <section>
-    <h2>Picking A Bootcamp</h2>
+    <h2>Finish Line</h2>
+    {{!-- {{>category-post posts}} --}}
+
     {{#if posts.length}}
         <ol class="post-list">
             {{#each posts as |post|}}
-                {{#if (check_if_equal category_id 1)}}
+                {{#if (check_if_equal category_id 7)}}
                     <li>
                         {{> post-info post}}
                     </li>
@@ -11,4 +13,5 @@
             {{/each}}
         </ol>
     {{/if}}
+
 </section>
