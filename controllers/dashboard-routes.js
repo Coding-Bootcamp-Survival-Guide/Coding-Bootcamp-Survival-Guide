@@ -93,7 +93,7 @@ router.get('/', withAuth, (req, res) => {
             // serialize data before passing to template
             const users = dbUserData.map(user => user.get({ plain: true }));
 
-            console.log(users)
+            //console.log(users)
 
 
             let cat1Likes = []
@@ -104,33 +104,40 @@ router.get('/', withAuth, (req, res) => {
             let cat6Likes = []
             let cat7Likes = []
 
-            /*
+
             users.forEach((user) => {
-                switch (users.likes) {
-                    case "pick-camp":
-                        cat1Likes.push(users.likes)
-                        break;
-                    case "pre-course":
-                        cat2Likes(users.likes)
-                        break;
-                    case "tools":
-                        cat3Likes(users.likes)
-                        break;
-                    case "frontend":
-                        cat4Likes(users.likes)
-                        break;
-                    case "backend":
-                        cat4Likes(users.likes)
-                        break;
-                    case "self-care":
-                        cat4Likes(users.likes)
-                        break;
-                    case "finish-line":
-                        cat4Likes(users.likes)
-                        break;
+                if (user.likes.length > 0) {
+                    user.likes.forEach(like => {
+                        console.log(like.post.category_name);
+                        switch (like.post.category_name) {
+                            case "pick-camp":
+                                cat1Likes.push(like.post)
+                                break;
+                            case "pre-course":
+                                cat2Likes(like.post)
+                                break;
+                            case "tools":
+                                cat3Likes(like.post)
+                                break;
+                            case "frontend":
+                                cat4Likes(like.post)
+                                break;
+                            case "backend":
+                                cat4Likes(like.post)
+                                break;
+                            case "self-care":
+                                cat4Likes(like.post)
+                                break;
+                            case "finish-line":
+                                cat4Likes(like.post)
+                                break;
+                        }
+                    })
                 }
-            })
-            */
+            });
+
+
+            /*
             users.forEach(user => {
                 if (user.likes.length > 0) {
                     user.likes.forEach(like => {
@@ -152,6 +159,7 @@ router.get('/', withAuth, (req, res) => {
                     })
                 }
             })
+            */
 
             res.render('dashboard', {
                 users,
