@@ -101,7 +101,6 @@ router.get('/:id', (req, res) => {
 
 // create a post
 router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_text: 'This is text describing the post',post_url: 'https://taskmaster.com/press', user_id: 1}
   const categoryNames = ["pick-camp", "pre-course", "tools", "frontend", "backend", "self-care", "finish-line"];
   let category_id = categoryNames.indexOf(req.body.category_name) + 1;
   
