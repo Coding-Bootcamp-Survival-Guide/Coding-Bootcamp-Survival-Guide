@@ -109,6 +109,10 @@ main {
   flex: 1;
   padding: 2% 4%;
 }
+
+.home-page {
+  text-align: center;
+}
   
 .buttons {
   display: inline-block;
@@ -311,6 +315,10 @@ form label {
   
 .edit-post-form {
   margin-bottom: 5%;
+}
+
+#profile-pic {
+  height: 50px;
 }
   
 footer {

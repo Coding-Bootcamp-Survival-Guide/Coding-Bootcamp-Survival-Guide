@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just Tech News</title>
+    <title>Coding Bootcamp Survival Guide</title>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
@@ -18,11 +18,6 @@
         <header>
 
             <nav>
-                {{!-- 14.3.7 we are checking for loggedIn in the main layout, but we're only passing loggedIn to the
-                single-post.handlebars
-                template. Fortunately, variables that are passed to view templates are automatically passed to the main
-                layout. --}}
-                {{!-- <a href="/">home</a> --}}
                 {{#if loggedIn}}
                     {{#if isAdmin}}
                         <a href="/dashboard/admin">dashboard</a>
@@ -30,12 +25,13 @@
                             <a href="/dashboard">dashboard</a>
                     {{/if}}
                 {{/if}}
-                <a href="/pick-camp">pick a camp</a>
-                <a href="/pre-course">pre-course work</a>
-                <a href="/tools">tools</a>
-                <a href="/frontend">front-end</a>
-                <a href="/backend">back-end</a>
-                <a href="/self-care">self-care</a>
+                <a href="/category/pick-camp">pick a camp</a>
+                <a href="/category/pre-course">pre-course prep</a>
+                <a href="/category/tools">tools</a>
+                <a href="/category/frontend">front-end</a>
+                <a href="/category/backend">back-end</a>
+                <a href="/category/self-care">self-care</a>
+                <a href="/category/finish-line">finish-line</a>
                 {{#unless loggedIn}}
                 <a href="/login">login</a>
                 {{/unless}}

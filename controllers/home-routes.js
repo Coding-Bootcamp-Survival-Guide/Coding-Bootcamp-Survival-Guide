@@ -15,8 +15,10 @@ router.get('/', (req, res) => {
         'id',
         'post_text',
         'post_url',
+        'post_image',
         'title',
-        'category',
+        'category_name',
+        'category_id',
         'created_at'
       ],
       include: [
@@ -30,7 +32,7 @@ router.get('/', (req, res) => {
         },
         {
           model: User,
-          attributes: ['username']
+          attributes: ['username', 'profile_pic', 'bootcamp']
         },
         {
           model: Like,
@@ -79,8 +81,10 @@ router.get('/post/:id', (req, res) => {
       'id',
       'post_text',
       'post_url',
+      'post_image',
       'title',
-      'category',
+      'category_name',
+      'category_id',
       'created_at'
     ],
     include: [
@@ -94,7 +98,7 @@ router.get('/post/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username', 'profile_pic', 'bootcamp']
       },
       {
         model: Like,

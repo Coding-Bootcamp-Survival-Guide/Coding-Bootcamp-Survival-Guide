@@ -1,8 +1,8 @@
-<p>posts, {{posts}}</p>
+{{!-- <p> below is a test of whether there is date in post --}}
 {{#if posts.length}}
     <ol class="post-list">
         {{#each posts as |post|}}
-            {{#if (check_if_equal category data)}}
+            {{#if (check_if_equal category_id data)}}
                 <li>
                     {{> post-info post}}
                 </li>

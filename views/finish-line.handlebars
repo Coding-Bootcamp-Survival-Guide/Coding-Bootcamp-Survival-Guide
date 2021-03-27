@@ -1,13 +1,11 @@
 <section>
-    <h2>Self-Care</h2>
-
-    {{!-- posts is an array of objects I would like to pass through the partial category-posts --}}
+    <h2>Finish Line</h2>
     {{!-- {{>category-post posts}} --}}
-    
+
     {{#if posts.length}}
         <ol class="post-list">
             {{#each posts as |post|}}
-                {{#if (check_if_equal category_name "self-care")}}
+                {{#if (check_if_equal category_name "finish-line")}}
                     <li>
                         {{> post-info post}}
                     </li>
@@ -15,4 +13,5 @@
             {{/each}}
         </ol>
     {{/if}}
+
 </section>

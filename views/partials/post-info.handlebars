@@ -1,8 +1,9 @@
 <article class="post">
     <div class="title">
-        <h2><a href="/post/{{id}}">{{title}}</a> <span>(created by {{user.username}} on {{format_date created_at}})</span></h2>
+        <h2><a href="/post/{{id}}">{{title}}</a> <span> <a href="{{post_url}}" target="_blank">({{format_url post_url}})</a></span></h2>
         <p>{{post_text}}</p>
-        <span>({{format_url post_url}})</span>
+       <img id="profile-pic" src="{{user.profile_pic}}" alt="{{user.username}} profile pic" />
+        <span>(created by {{user.username}}, {{user.bootcamp}}, on {{format_date created_at}})</span>
     </div>
     <div class="meta">
         {{likes.length}} {{format_plural "like" likes.length}} 

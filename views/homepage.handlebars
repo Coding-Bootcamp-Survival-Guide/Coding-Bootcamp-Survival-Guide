@@ -1,9 +1,22 @@
 {{!-- USED BY controllers/home-routes.js --}}
+<section class="home-page">
+  <h1>This is the Home Page</h1>
+  <p>There will be lots of content here</p>
+</section>
 
-<ol class="post-list">
-  {{#each posts as |post|}}
-  <li>
-    {{> post-info post }}
-  </li>
-  {{/each}}
-</ol>
+{{#if loggedIn}}
+  {{#if isAdmin}}
+    <button class='goto-dashboard'  onClick="window.location='/dashboard/admin/'">My Admin Dashboard</button>
+  {{else}}
+    <button class='goto-dashboard' onClick="window.location='/dashboard/'">My Dashboard</button>
+  {{/if}}
+{{/if}}
+
+
+<button class="goto-pick-camp"  onClick="window.location='/category/pick-camp'">Pick a Camp</button>
+<button class="goto-pre-course" onClick="window.location='/category/pre-course'">Pre-Course Prep</button>
+<button class="goto-tools" onClick="window.location='/category/tools'">Tools & Cheatsheets</button>
+<button class="goto-frontend" onClick="window.location='/category/frontend'">Front End</button>
+<button class="goto-backend" onClick="window.location='/category/backend'">Back End</button>
+<button class="goto-self-care" onClick="window.location='/category/self-care'">Self Care</button>
+<button class="goto-finish-line" onClick="window.location='/category/finish-line'">Finish Line</button>
