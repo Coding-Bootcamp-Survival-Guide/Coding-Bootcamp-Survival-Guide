@@ -103,6 +103,7 @@ router.get('/', withAuth, (req, res) => {
             let cat6Likes = []
             let cat7Likes = []
             /*
+            // switch case for category selection 
             users.forEach((user) => {
                 if (user.likes.length > 0) {
                     user.likes.forEach(like => {
@@ -135,7 +136,7 @@ router.get('/', withAuth, (req, res) => {
             });
             */
 
-             //forEach using if/else instead of switch case
+            //forEach using if/else instead of switch case
             users.forEach(user => {
                 if (user.likes.length > 0) {
                     user.likes.forEach(like => {
@@ -157,7 +158,7 @@ router.get('/', withAuth, (req, res) => {
                     })
                 }
             })
-            
+
 
             res.render('dashboard', {
                 users,
