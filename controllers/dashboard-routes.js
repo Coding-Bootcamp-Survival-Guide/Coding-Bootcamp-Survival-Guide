@@ -95,7 +95,6 @@ router.get('/', withAuth, (req, res) => {
 
             //console.log(users)
 
-
             let cat1Likes = []
             let cat2Likes = []
             let cat3Likes = []
@@ -103,7 +102,6 @@ router.get('/', withAuth, (req, res) => {
             let cat5Likes = []
             let cat6Likes = []
             let cat7Likes = []
-
 
             users.forEach((user) => {
                 if (user.likes.length > 0) {
@@ -136,8 +134,7 @@ router.get('/', withAuth, (req, res) => {
                 }
             });
 
-
-            /*
+            /* forEach using if/else instead of switch case
             users.forEach(user => {
                 if (user.likes.length > 0) {
                     user.likes.forEach(like => {

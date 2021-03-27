@@ -3,12 +3,12 @@ const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const { Post, User, Comment, Like } = require('../models');
 
-//get all posts in category 1 (pick a camp)
+//get all posts in selected category
 router.get('/:category_name', (req, res) => {
     const categoryName = req.params.category_name;
     Post.findAll({
         where: {
-            // use the ID from the session
+            // use the category name from the session
             category_name: req.params.category_name
         },
         attributes: [
