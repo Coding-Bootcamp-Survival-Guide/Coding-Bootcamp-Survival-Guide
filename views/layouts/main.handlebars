@@ -18,11 +18,6 @@
         <header>
 
             <nav>
-                {{!-- 14.3.7 we are checking for loggedIn in the main layout, but we're only passing loggedIn to the
-                single-post.handlebars
-                template. Fortunately, variables that are passed to view templates are automatically passed to the main
-                layout. --}}
-                {{!-- <a href="/">home</a> --}}
                 {{#if loggedIn}}
                     {{#if isAdmin}}
                         <a href="/dashboard/admin">dashboard</a>
@@ -30,12 +25,13 @@
                             <a href="/dashboard">dashboard</a>
                     {{/if}}
                 {{/if}}
-                <a href="/category/1">pick a camp</a>
-                <a href="/category/2">pre-course prep</a>
-                <a href="/category/3">tools</a>
-                <a href="/category/4">front-end</a>
-                <a href="/category/5">back-end</a>
-                <a href="/category/6">self-care</a>
+                <a href="/category/pick-camp">pick a camp</a>
+                <a href="/category/pre-course">pre-course prep</a>
+                <a href="/category/tools">tools</a>
+                <a href="/category/frontend">front-end</a>
+                <a href="/category/backend">back-end</a>
+                <a href="/category/self-care">self-care</a>
+                <a href="/category/finish-line">finish-line</a>
                 {{#unless loggedIn}}
                 <a href="/login">login</a>
                 {{/unless}}

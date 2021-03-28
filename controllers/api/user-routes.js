@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'category', 'post_text', 'post_url', 'created_at']
+        attributes: ['id', 'title', 'category_id', 'category_name', 'post_text', 'post_url', 'post_image', 'created_at']
       },
       {
         model: Comment,
@@ -59,7 +59,6 @@ router.get('/:id', (req, res) => {
 
 // create a user
 router.post('/', (req, res) => {
-  // expects {username: 'Lernantino', bootcamp: 'UofA Coding Academy', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
     username: req.body.username,
     bootcamp: req.body.bootcamp,
@@ -73,7 +72,7 @@ router.post('/', (req, res) => {
         req.session.bootcamp = dbUserData.bootcamp;
         req.session.isAdmin = dbUserData.is_admin;
         req.session.loggedIn = true;
-  
+
         res.json(dbUserData);
       });
     })
@@ -85,7 +84,6 @@ router.post('/', (req, res) => {
 
 // login for a given user
 router.post('/login', (req, res) => {
-  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
       email: req.body.email
@@ -109,7 +107,7 @@ router.post('/login', (req, res) => {
       req.session.bootcamp = dbUserData.bootcamp;
       req.session.isAdmin = dbUserData.is_admin;
       req.session.loggedIn = true;
-  
+
       res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   });
@@ -127,8 +125,6 @@ router.post('/logout', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  // expects {username: 'Lernantino', bootcamp: 'UofA Coding Bootcamp 2020-2021', email: 'lernantino@gmail.com', password: 'password1234'}
-
   // pass in req.body instead to only update what's passed through
   User.update(req.body, {
     individualHooks: true,

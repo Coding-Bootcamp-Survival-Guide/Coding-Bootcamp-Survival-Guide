@@ -5,7 +5,7 @@
     {{#if posts.length}}
         <ol class="post-list">
             {{#each posts as |post|}}
-                {{#if (check_if_equal category 3)}}
+                {{#if (check_if_equal category_name "tools")}}
                     <li>
                         {{> post-info post}}
                     </li>
