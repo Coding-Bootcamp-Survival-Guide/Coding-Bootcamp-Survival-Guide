@@ -569,19 +569,10 @@ video {
   }
 }
 
-<<<<<<< HEAD
 @media (min-width: 1024px) {
   .container {
     max-width: 1024px;
   }
-=======
-.home-page {
-  text-align: center;
-}
-  
-.buttons {
-  display: inline-block;
->>>>>>> 8afba87db9a2c75b5242d99a192aa134b129d585
 }
 
 @media (min-width: 1280px) {
@@ -739,7 +730,6 @@ video {
   margin-right: calc(2.75rem * var(--tw-space-x-reverse));
   margin-left: calc(2.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
-<<<<<<< HEAD
 
 .space-y-12 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -183920,57 +183910,32 @@ video {
     -webkit-animation: bounce 1s infinite;
             animation: bounce 1s infinite;
   }
-=======
-  
-.edit-link {
-  display: block;
-  margin: -1.5% 0 2% 0;
-  color: var(--color-lt1);
-}
-    
-.comment-form {
-  margin-bottom: 5%;
-}
-  
-.comment-body {
-  min-width: 40%;
-  min-height: 100px;
-}
-.comment {
-  padding: 1%;
-  margin-bottom: 1%;
-  /* border-bottom: 1px solid var(--color-lt1); */
-
-}
-  
-/* .comment:nth-child(odd) {
-  background-color:  var(--color-lt1);
-  color:  var(--color-dk2);
-} */
-  
-.comment .meta {
-  font-size: 90%;
-  margin-bottom: .5%;
-  opacity: .6;
-}
-  
-.new-post-form input {
-  width: 300px;
-}
-  
-.edit-post-form {
-  margin-bottom: 5%;
 }
 
-#profile-pic {
-  height: 50px;
+.gloria_font{ 
+font-family: 'Gloria Hallelujah', cursive;
 }
-  
-footer {
-  border-top: 1px solid var(--color-lt2);
-  display: flex;
-  justify-content: center;
-  padding: 1%;
-  font-size: 110%;
->>>>>>> 8afba87db9a2c75b5242d99a192aa134b129d585
+
+.montserat_font { 
+font-family: 'Montserrat', sans-serif;
+}
+
+.nothing_font { 
+font-family: 'Nothing You Could Do', cursive;
+}
+
+.raleway_font { 
+font-family: 'Raleway', sans-serif;
+} 
+
+.shadows_font { 
+font-family: 'Shadows Into Light', cursive;
+}
+
+.special_font { 
+font-family: 'Special Elite', cursive;
+}
+
+.unica_font { 
+font-family: 'Unica One', cursive;
 }
