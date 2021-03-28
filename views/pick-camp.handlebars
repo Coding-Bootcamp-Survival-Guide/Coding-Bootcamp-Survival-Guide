@@ -1,14 +1,12 @@
-<section>
-    <h2>Picking A Bootcamp</h2>
+<h2>Picking A Bootcamp</h2>
+<div class="container my-12 mx-auto px-4 md:px-12 ">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
     {{#if posts.length}}
-        <ol class="post-list">
-            {{#each posts as |post|}}
-                {{#if (check_if_equal category_name "pick-camp")}}
-                    <li>
-                        {{> post-info post}}
-                    </li>
-                {{/if}}
-            {{/each}}
-        </ol>
+      {{#each posts as |post|}}
+        {{#if (check_if_equal category_name "pick-camp")}}
+          {{> post-info post}}
+        {{/if}}
+      {{/each}}
     {{/if}}
-</section>
+  </div>
+</div>

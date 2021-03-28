@@ -32,10 +32,11 @@ User.init(
         defaultValue: false
     },
     bootcamp: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING
     },
     profile_pic: {
         type: DataTypes.STRING,
+        defaultValue: `/assets/images/user.jpg`
     },
     email: {
       type: DataTypes.STRING,

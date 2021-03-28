@@ -50,6 +50,7 @@ router.get('/:category_name', (req, res) => {
             res.render(categoryName, {
                 posts,
                 loggedIn: req.session.loggedIn,
+                profilePic: req.session.profilePic,
                 isAdmin: req.session.isAdmin
             });
         })

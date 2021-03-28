@@ -50,6 +50,7 @@ router.get('/admin', withAuth, (req, res) => {
             res.render('dashboard-admin', {
                 posts,
                 loggedIn: true,
+                profilePic: req.session.profilePic,
                 isAdmin: req.session.isAdmin
             });
         })
@@ -158,8 +159,6 @@ router.get('/', withAuth, (req, res) => {
                     })
                 }
             })
-
-
             res.render('dashboard', {
                 users,
                 cat1Likes,
@@ -169,6 +168,7 @@ router.get('/', withAuth, (req, res) => {
                 cat5Likes,
                 cat6Likes,
                 cat7Likes,
+                profilePic: req.session.profilePic,
                 loggedIn: true,
                 isAdmin: req.session.isAdmin
             })
@@ -278,6 +278,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
             res.render('edit-post', {
                 post,
                 loggedIn: true,
+                profilePic: req.session.profilePic,
                 isAdmin: req.session.isAdmin
             });
         })
