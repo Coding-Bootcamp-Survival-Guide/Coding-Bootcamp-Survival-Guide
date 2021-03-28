@@ -71,6 +71,7 @@ router.post('/', (req, res) => {
         req.session.username = dbUserData.username;
         req.session.bootcamp = dbUserData.bootcamp;
         req.session.isAdmin = dbUserData.is_admin;
+        req.session.profilePic = dbUserDate.profile_pic;
         req.session.loggedIn = true;
 
         res.json(dbUserData);
@@ -106,6 +107,7 @@ router.post('/login', (req, res) => {
       req.session.username = dbUserData.username;
       req.session.bootcamp = dbUserData.bootcamp;
       req.session.isAdmin = dbUserData.is_admin;
+      req.session.profilePic = dbUserData.profile_pic;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'You are now logged in!' });
