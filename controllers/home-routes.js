@@ -54,6 +54,7 @@ router.get('/', (req, res) => {
         res.render('homepage', {
           posts,
           loggedIn: req.session.loggedIn,
+          profilePic: req.session.profilePic,
           isAdmin: req.session.isAdmin
         });
     })
@@ -124,6 +125,7 @@ router.get('/post/:id', (req, res) => {
         post,
         loggedIn: req.session.loggedIn,
         userId: req.session.user_id,
+        profilePic: req.session.profilePic,
         isAdmin: req.session.isAdmin
       });
     })
