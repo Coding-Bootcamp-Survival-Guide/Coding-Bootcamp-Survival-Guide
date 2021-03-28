@@ -12,11 +12,12 @@
 
     <!-- tailwinds css -->
     <link href="../stylesheets/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="../assets/images/guide 16pxl.png"/>
     <title>Coding Bootcamp Suvival Guide</title>
   </head>
 
-  <nav class="bg-indigo-900">
-    <div class=" mx-auto px-2 sm:px-6 lg:px-8 bg-gray-800">
+  <nav class="bg-indigo-900 h-auto">
+    <div class=" mx-auto px-2 sm:px-6 lg:px-8 bg-gray-800 pb-3">
       <div class="relative flex items-center justify-between h-16 bg-gray-800">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden bg-gray-800">
           <!-- Mobile menu button-->
@@ -41,13 +42,14 @@
           </button>
         </div>
         <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start bg-gray-800">
-          <div class="flex-shrink-0 flex items-center bg-gray-800">
-           <span class="gloria_font text-gray-100 text-3xl">Coding Bootcamp Survival Guide</span>
+          <div class="flex-shrink-0 flex items-center bg-gray-800 justify-around">
+            <img src="../assets/images/guide 32pxl.png" alt="logo" class="p-2"  />
+           <span class="gloria_font text-gray-100 text-3xl py-2">Coding Bootcamp Survival Guide</span>
           </div>
           <div class="hidden sm:block sm:ml-6 bg-gray-800">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page"><i class="fas fa-home"></i></a>
+              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page"><i class="fas fa-home text-2xl"></i></a>
 
               <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pick a Camp</a>
 
@@ -73,7 +75,7 @@
             <div>
               <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-expanded="false" aria-haspopup="true">
                 <span class="sr-only">Open user menu</span>
-                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                <img class="h-8 w-8 rounded-full" src="../assets/images/user.png" alt="User Profile">
               </button>
             </div>
             <!--
@@ -102,66 +104,66 @@
     <div class="container my-12 mx-auto px-4 justify-center  ">
       <div class="flex flex-wrap flex-row mx-auto -m-4 ">
 
-        <div class="flex flex-wrap flex-row -m-4 justify-center w-full md:w-full lg:w-1/2 xl:w-1/2">
+        <div class="flex flex-wrap flex-row  justify-center w-full md:w-full lg:w-1/2 xl:w-1/2">
 
-          <div class="p-4 w-full lg:w-1/2 xl:w-1/2 justify-center">
-            <div class="bg-gray-800 rounded-lg shadow-2xl p-4  text-center">
+          <div class="p-2 px-4 w-full lg:w-1/2 xl:w-1/2 h-auto justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2 text-center">
               <button id="login" class="justify-center" onClick=""><img src="../assets/images/008-login.png" /></button>
               <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Login</p>
             </div>
           </div>
         
           
-          <div class="p-4 w-full lg:w-1/2 xl:w-1/2 justify-center">
-            <div class="bg-gray-800 rounded-lg shadow-2xl p-4  text-center">
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 h-auto justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
               <button id="pick" class="justify-center" onClick=""><img src="../assets/images/001-choose.png" /></button>
               <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Pick a Bootcamp</p>
             </div>
           </div>
         
           
-          <div class="p-4 w-full lg:w-1/2 xl:w-1/2 justify-center">
-            <div class="bg-gray-800 rounded-lg shadow-2xl p-4  text-center">
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
               <button id="precourse" class="justify-center" onClick=""><img src="../assets/images/004-start-line.png" /></button>
               <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Pre-Course Help</p>
             </div>
           </div>
         
           
-          <div class="p-4 w-full lg:w-1/2 xl:w-1/2 justify-center">
-            <div class="bg-gray-800 rounded-lg shadow-2xl p-4  text-center">
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
               <button id="tools" class="justify-center" onClick=""><img src="../assets/images/007-tools-and-utensils.png" /></button>
               <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Tools & Cheatsheets</p>
             </div>
           </div>
         
           
-          <div class="p-4 w-full lg:w-1/2 xl:w-1/2 justify-center">
-            <div class="bg-gray-800 rounded-lg shadow-2xl p-4  text-center">
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
               <button id="front_end" class="justify-center" onClick=""><img src="../assets/images/002-code.png" /></button>
               <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Front-End Design</p>
             </div>
           </div>
         
           
-          <div class="p-4 w-full lg:w-1/2 xl:w-1/2 justify-center">
-            <div class="bg-gray-800 rounded-lg shadow-2xl p-4  text-center">
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
               <button id="back_end" class="justify-center" onClick=""><img src="../assets/images/003-database-storage.png" /></button>
               <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Back-End Design</p>
             </div>
           </div>
         
           
-          <div class="p-4 w-full lg:w-1/2 xl:w-1/2 justify-center">
-            <div class="bg-gray-800 rounded-lg shadow-2xl p-4  text-center">
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
               <button id="self_care" class="justify-center" onClick=""><img src="../assets/images/005-relax.png" /></button>
               <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Self Care</p>
             </div>
           </div>
         
           
-          <div class="p-4 w-full lg:w-1/2 xl:w-1/2 justify-center">
-            <div class="bg-gray-800 rounded-lg shadow-2xl p-4  text-center">
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
               <button id="finish_line" class="justify-center" onClick=""><img src="../assets/images/006-trophy.png" /></button>
               <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Finish Line!</p>
             </div>
@@ -180,11 +182,11 @@
 
         <div class="-m-4 p-4 mx-auto overflow-hidden hidden md:w-1/2 lg:block xl:block justify-center ">
           <div class=" rounded-lg  p-4 m-4 ">
-            <p class="text-gray-200 text-4xl text-center gloria_font font-black p- 2 leading-loose">Welcome to the </br> 
+            <p class="text-gray-200 text-4xl text-center gloria_font font-black p- 2 leading-relaxed">Welcome to the </br> 
               Coding Bootcamp Survival Guide! </p>
-            <img src="../assets/images/student_transparent_bg_v3.png" alt="Student" class="justify-center p-6">
+            <img src="../assets/images/student_transparent_bg_v3.png" alt="Student" class="justify-center text-center p-6 mx-auto" width="70%" height="70%"/>
             <div class="-m-4 rounded-lg shadow-lg p-4 bg-gray-800">
-              <p class="ml-2 text-3xl gloria_font  text-center text-indigo-200">Here you will find a curated collection of resources to help you along your journey. We have everything from looking for help picking a bootcamp, what to do after it is done and you've crossed the Finish Line! </br></br> Don't forget to create an account to save your favorite articles and resources to your personal profile.</p>
+              <p class="ml-2 text-1xl gloria_font  text-center text-indigo-200">Here you will find a curated collection of resources to help you along your journey. We have everything from looking for help picking a bootcamp, what to do after it is done and you've crossed the Finish Line! </br></br> Don't forget to create an account to save your favorite articles and resources to your personal profile.</p>
               </div>
           </div>
         </div>
