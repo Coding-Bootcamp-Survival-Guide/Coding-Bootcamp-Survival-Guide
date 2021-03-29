@@ -1,83 +1,98 @@
 {{#unless isAdmin}}
-<section>
-  <h2>Your Saved Posts</h2>
+<h2>Your Saved Posts</h2>
 
-  {{#if cat1Likes.length}}
-  {{#each cat1Likes as |likedPost|}}
-  <h3>Picking a Bootcamp</h3>
-  <ol class="like-list">
-    <li>
+{{#if cat1Likes.length}}
+{{#each cat1Likes as |likedPost|}}
+<h3>Picking a Bootcamp</h3>
+<div class="container my-12 mx-auto px-4 md:px-12 ">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
       {{> post-info likedPost}}
-    </li>
-  </ol>
-  {{/each}}
-  {{/if}}
+    </div>
+  </div>
+</div>
+{{/each}}
+{{/if}}
 
-  {{#if cat2Likes.length}}
-  {{#each cat2Likes as |likedPost|}}
-  <h3>Pre-course Prep</h3>
-  <ol class="like-list">
-    <li>
+{{#if cat2Likes.length}}
+{{#each cat2Likes as |likedPost|}}
+<h3>Pre-Course Prep</h3>
+<div class="container my-12 mx-auto px-4 md:px-12 ">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
       {{> post-info likedPost}}
-    </li>
-  </ol>
-  {{/each}}
-  {{/if}}
+    </div>
+  </div>
+</div>
+{{/each}}
+{{/if}}
 
-  {{#if cat3Likes.length}}
-  {{#each cat3Likes as |likedPost|}}
-  <h3>Cheatsheets &amp; Tools</h3>
-  <ol class="like-list">
-    <li>
+{{#if cat3Likes.length}}
+{{#each cat3Likes as |likedPost|}}
+<h3>Tools &amp; Cheatsheets</h3>
+<div class="container my-12 mx-auto px-4 md:px-12 ">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
       {{> post-info likedPost}}
-    </li>
-  </ol>
-  {{/each}}
-  {{/if}}
+    </div>
+  </div>
+</div>
+{{/each}}
+{{/if}}
 
-  {{#if cat4Likes.length}}
-  {{#each cat4Likes as |likedPost|}}
-  <h3>Front-end</h3>
-  <ol class="like-list">
-    <li>
+{{#if cat4Likes.length}}
+{{#each cat4Likes as |likedPost|}}
+<h3>Front-End</h3>
+<div class="container my-12 mx-auto px-4 md:px-12 ">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
       {{> post-info likedPost}}
-    </li>
-  </ol>
-  {{/each}}
-  {{/if}}
+    </div>
+  </div>
+</div>
+{{/each}}
+{{/if}}
 
-  {{#if cat5Likes.length}}
-  {{#each cat5Likes as |likedPost|}}
-  <h3>Back-end</h3>
-  <ol class="like-list">
-    <li>
+{{#if cat5Likes.length}}
+{{#each cat5Likes as |likedPost|}}
+<h3>Back-End</h3>
+<div class="container my-12 mx-auto px-4 md:px-12 ">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
       {{> post-info likedPost}}
-    </li>
-  </ol>
-  {{/each}}
-  {{/if}}
+    </div>
+  </div>
+</div>
+{{/each}}
+{{/if}}
 
-  {{#if cat6Likes.length}}
-  {{#each cat6Likes as |likedPost|}}
-  <h3>Self-care</h3>
-  <ol class="like-list">
-    <li>
+{{#if cat6Likes.length}}
+{{#each cat6Likes as |likedPost|}}
+<h3>Self-Care</h3>
+<div class="container my-12 mx-auto px-4 md:px-12 ">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
       {{> post-info likedPost}}
-    </li>
-  </ol>
-  {{/each}}
-  {{/if}}
+    </div>
+  </div>
+</div>
+{{/each}}
+{{/if}}
 
-  {{#if cat7Likes.length}}
-  {{#each cat7Likes as |likedPost|}}
-  <h3>Finish-line</h3>
-  <ol class="like-list">
-    <li>
+{{#if cat7Likes.length}}
+{{#each cat7Likes as |likedPost|}}
+<h3>Finish-Line</h3>
+<div class="container my-12 mx-auto px-4 md:px-12 ">
+  <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
       {{> post-info likedPost}}
-    </li>
-  </ol>
-  {{/each}}
-  {{/if}}
+    </div>
+  </div>
+</div>
+{{/each}}
+{{/if}}
 
-</section>
+
+
+
 {{/unless}}

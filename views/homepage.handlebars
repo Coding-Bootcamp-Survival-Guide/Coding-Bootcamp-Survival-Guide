@@ -1,22 +1,98 @@
 {{!-- USED BY controllers/home-routes.js --}}
-<section class="home-page">
-  <h1>This is the Home Page</h1>
-  <p>There will be lots of content here</p>
-</section>
-
-{{#if loggedIn}}
-  {{#if isAdmin}}
-    <button class='goto-dashboard'  onClick="window.location='/dashboard/admin/'">My Admin Dashboard</button>
-  {{else}}
-    <button class='goto-dashboard' onClick="window.location='/dashboard/'">My Dashboard</button>
-  {{/if}}
-{{/if}}
 
 
-<button class="goto-pick-camp"  onClick="window.location='/category/pick-camp'">Pick a Camp</button>
-<button class="goto-pre-course" onClick="window.location='/category/pre-course'">Pre-Course Prep</button>
-<button class="goto-tools" onClick="window.location='/category/tools'">Tools & Cheatsheets</button>
-<button class="goto-frontend" onClick="window.location='/category/frontend'">Front End</button>
-<button class="goto-backend" onClick="window.location='/category/backend'">Back End</button>
-<button class="goto-self-care" onClick="window.location='/category/self-care'">Self Care</button>
-<button class="goto-finish-line" onClick="window.location='/category/finish-line'">Finish Line</button>
+<div id="home-page" class="container my-12 mx-auto px-4 justify-center  ">
+  <div class="flex flex-wrap flex-row mx-auto -m-4 ">
+
+    <div class="flex flex-wrap flex-row  justify-center w-full md:w-full lg:w-1/2 xl:w-1/2">
+
+      <div class="p-2 px-4 w-full lg:w-1/2 xl:w-1/2 h-auto justify-center">
+        <div class="bg-gray-800 rounded-lg shadow-2xl p-2 text-center">
+          <button id="login" class="justify-center" onclick="location.href='/login'"><img
+              src="../assets/images/008-login.png" /></button>
+          <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Login</p>
+        </div>
+      </div>
+
+
+      <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 h-auto justify-center">
+        <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+          <button id="pick" class="justify-center" onclick="location.href='/category/pick-camp'"><img
+              src="../assets/images/001-choose.png" /></button>
+          <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Pick a Bootcamp</p>
+        </div>
+      </div>
+
+
+      <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+        <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+          <button id="precourse" class="justify-center" onclick="location.href='/category/pre-course'"><img
+              src="../assets/images/004-start-line.png" /></button>
+          <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Pre-Course Help</p>
+        </div>
+      </div>
+
+
+      <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+        <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+          <button id="tools" class="justify-center" onclick="location.href='/category/tools'"><img
+              src="../assets/images/007-tools-and-utensils.png" /></button>
+          <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Tools & Cheatsheets</p>
+        </div>
+      </div>
+
+
+      <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+        <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+          <button id="front_end" class="justify-center" onclick="location.href='/category/frontend'"><img
+              src="../assets/images/002-code.png" /></button>
+          <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Front-End Design</p>
+        </div>
+      </div>
+
+
+      <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+        <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+          <button id="back_end" class="justify-center" onclick="location.href='/category/backend'"><img
+              src="../assets/images/003-database-storage.png" /></button>
+          <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Back-End Design</p>
+        </div>
+      </div>
+
+
+      <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+        <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+          <button id="self_care" class="justify-center" onclick="location.href='/category/self-care'"><img
+              src="../assets/images/005-relax.png" /></button>
+          <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Self Care</p>
+        </div>
+      </div>
+
+
+      <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+        <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+          <button id="finish_line" class="justify-center" onclick="location.href='/category/finish-line'"><img
+              src="../assets/images/006-trophy.png" /></button>
+          <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Finish Line!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- end buttons -->
+
+    <div class="-m-4 p-4 mx-auto overflow-hidden hidden md:w-1/2 lg:block xl:block justify-center ">
+      <div class=" rounded-lg  p-4 m-4 ">
+        <p class="text-gray-200 text-4xl text-center gloria_font font-black p- 2 leading-relaxed">Welcome to the </br>
+          Coding Bootcamp Survival Guide! </p>
+        <img src="../assets/images/student_transparent_bg_v3.png" alt="Student"
+          class="justify-center text-center p-6 mx-auto" width="70%" height="70%" />
+        <div class="-m-4 rounded-lg shadow-lg p-4 bg-gray-800">
+          <p class="ml-2 text-1xl gloria_font  text-center text-indigo-200">Here you will find a curated collection of
+            resources to help you along your journey. We have everything from looking for help picking a bootcamp, what
+            to do after it is done and you've crossed the Finish Line! </br></br> Don't forget to create an account to
+            save your favorite articles and resources to your personal profile.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
