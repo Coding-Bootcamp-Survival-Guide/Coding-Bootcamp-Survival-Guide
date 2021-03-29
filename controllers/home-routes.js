@@ -3,7 +3,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-
 const { Post, User, Comment, Like } = require('../models');
 
 // Because we've hooked up a template engine, we can now use res.render() and specify which template we want to use. 
