@@ -36,19 +36,13 @@
                       <select id="post-category" name="post-category" autocomplete="post-category" selected="{{post.category_name}}" class="mt-1 block w-full py-2 px-3 border 
                         border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"> 
                         {{#each categoryNames as |categoryName|}}    
-                          {{#if (check_if_equal categoryName post.category_name)}}
+                          {{!-- to reference a variable outside the scope of handlebars (cagegoryName) need to use ../post.category_name --}}
+                          {{#if (check_if_equal categoryName ../post.category_name)}}
                             <option value="{{categoryName}}" selected>{{categoryName}}</option>
                           {{else}}
                             <option value="{{categoryName}}">{{categoryName}}</option>
                           {{/if}}
                         {{/each}}                 
-                        {{!-- <option value="pick-camp">Picking a Bootcamp</option>
-                        <option value="pre-course">Pre-Course Prep</option>
-                        <option value="tools">Tools & Cheatsheets</option>
-                        <option value="frontend">Front End</option>
-                        <option value="backend">Back End</option>
-                        <option value="self-care">Self Care</option>
-                        <option value="finish-line">Finish Line</option> --}}
                       </select>
                     </div>
                   </div>
