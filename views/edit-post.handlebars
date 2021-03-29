@@ -33,14 +33,22 @@
                       Post Category
                     </label>
                     <div class="mt-1">
-                      <select id="post-category" name="post-category" autocomplete="post-category" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">                       
-                        <option value="pick-camp">Picking a Bootcamp</option>
+                      <select id="post-category" name="post-category" autocomplete="post-category" selected="{{post.category_name}}" class="mt-1 block w-full py-2 px-3 border 
+                        border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"> 
+                        {{#each categoryNames as |categoryName|}}    
+                          {{#if (check_if_equal categoryName post.category_name)}}
+                            <option value="{{categoryName}}" selected>{{categoryName}}</option>
+                          {{else}}
+                            <option value="{{categoryName}}">{{categoryName}}</option>
+                          {{/if}}
+                        {{/each}}                 
+                        {{!-- <option value="pick-camp">Picking a Bootcamp</option>
                         <option value="pre-course">Pre-Course Prep</option>
                         <option value="tools">Tools & Cheatsheets</option>
                         <option value="frontend">Front End</option>
                         <option value="backend">Back End</option>
                         <option value="self-care">Self Care</option>
-                        <option value="finish-line">Finish Line</option>
+                        <option value="finish-line">Finish Line</option> --}}
                       </select>
                     </div>
                   </div>
@@ -108,57 +116,5 @@
   </div>
 </div>
 
-{{!-- <article>
-  {{!-- <a href="/dashboard"> &larr; Back to dashboard</a> --}}
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input name="post-title" type="text" value="{{post.title}}" />
-    </div>
-    <div>
-      <label for="post-category">Choose a category:</label>
-      <select id="post-category" name="post-category">
-        <option value="pick-camp">Pick a Bootcamp</option>
-        <option value="pre-course">Pre-Course Prep</option>
-        <option value="tools">Tools & Cheatsheets</option>
-        <option value="frontend">Front End</option>
-        <option value="backend">Back End</option>
-        <option value="self-care">Self Care</option>
-        <option value="finish-line">Finish Line</option>
-      </select>
-    </div>
-
-    {{!-- <div>
-      <label for="post-category">Category (1 = pick a camp, 2 = pre-course, 3 = tools, 4 = front-end, 5 = back-end, 6 = decompress)</label>
-      <input id="post-category" name="post-category" value="{{post.category_id}}" />
-    </div> --}}
-    {{!-- <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" value="{{post.post_url}}" />
-    </div>
-    <div>
-      <label for="post-image">Post Image URL</label>
-      <input id="post-image" name="post-image" value="{{post.post_image}}" />
-    </div>
-    <div>
-      {{!-- <input name="post-text" type="text" value="{{post.post_text}}" /> --}}
-      <label for="post-text">Post</label>
-      <textarea class="post-text" name="post-text" type="text">{{post.post_text}}</textarea> 
-    </div>
-    <div>
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
-    </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
-  </form>
-</article> --}}
-
- --}}
-
-
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
-{{!-- <script src="/javascript/comment.js"></script> --}}

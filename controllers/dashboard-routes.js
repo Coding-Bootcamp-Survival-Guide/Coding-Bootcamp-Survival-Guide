@@ -227,12 +227,14 @@ router.get('/edit/:id', withAuth, (req, res) => {
           const categoryNames = ["pick-camp", "pre-course", "tools", "frontend", "backend", "self-care", "finish-line"];
           let category_id = categoryNames.indexOf(dbPostData.category_name) + 1;
           dbPostData.category_id = category_id;
+          dbPostData.post_text = dbPostData.post_text.trim();
           // serialize the data
           const post = dbPostData.get({ plain: true });
 
           res.render('edit-post', {
               post,
               loggedIn: true,
+              categoryNames: categoryNames,
               profilePic: req.session.profilePic,
               isAdmin: req.session.isAdmin
           });

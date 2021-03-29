@@ -27,7 +27,7 @@ module.exports = {
     },
     
     check_if_equal: (a, b) => {
-      if (a === b) return true;
+      if (a == b) return true;
       else return false;
     }
   }
