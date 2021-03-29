@@ -100,73 +100,306 @@
 
 <!-- end nav bar -->
 
-  <body class="bg-indigo-900">
-    <div class="container my-12 mx-auto px-4 md:px-12 ">
-      <div class="flex flex-wrap -mx-1 lg:-mx-4">
-        <!-- Column -->
-        <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
-          <!-- Article -->
-          <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200">
-            <a href="#">
+<body class="bg-indigo-900">
+  <div class="container my-12 mx-auto px-4 md:px-12">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+      <!-- Article w/ Comments, Author, footer -->
+      <!-- Column -->
+      <div class="my-8 px-4 w-auto">
+        <!-- Article -->
+        <article
+          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200"
+        >
+        <!-- Article Title and Date -->
+          <header
+            class="flex items-center justify-between leading-tight p-2 md:p-4"
+          >
+            <h1 class="text-lg">
+              <a
+                class="no-underline hover:underline font-bold text-2xl raleway_font"
+                href="#"
+              >
+                Article Title
+              </a>
+            </h1>
+            <p class="text-grey-darker text-2xl raleway_font">11/1/19</p>
+          </header>
+          <!-- Article Image -->
+          <a href="#">
+            <img
+              alt="Placeholder"
+              class="block h-auto w-full max-w-2xl"
+              src="https://picsum.photos/1000/800/?random"
+            />
+          </a>
+          <!-- Article Description -->
+          <main class="p-4 max-w-2xl">
+            <p class="text-1xl p-2 raleway_font max-w-2xl">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Aliquam maiores porro in fugit impedit, assumenda repellat
+              corporis id nulla laborum, consectetur reiciendis necessitatibus
+              praesentium soluta iste atque accusamus, aperiam quasi!
+            </p>
+          </main>
+          <!-- Article Total Likes and Comments -->
+          <footer
+            class="flex items-center justify-between leading-none p-2 md:p-4"
+          >
+            <a
+              class="flex items-center no-underline hover:underline text-black"
+              href="#"
+            >
               <img
                 alt="Placeholder"
-                class="block h-auto w-full max-w-xl max-h-96"
-                src="https://picsum.photos/700/500/?random"
+                class="block rounded-full"
+                src="https://picsum.photos/32/32/?random"
               />
+              <p class="ml-2 text-xl nothing_font font-black text-gray-400">
+                Author Name
+              </p>
             </a>
+            <a
+              class="no-underline text-grey-darker hover:text-red-dark"
+              href="#"
+            >
+              <span class="raleway_font text-gray-400"
+                >0 Like <i class="fas fa-heart text-red-700"></i> | 0
+                Comments</span
+              >
+            </a>
+          </footer>
+        </article>
+        <!-- END Article -->
+      </div>
+      <!-- END Column -->
 
-            <header
-              class="flex items-center justify-between leading-tight p-2 md:p-4"
-            >
-              <h1 class="text-lg">
-                <a class="no-underline hover:underline font-bold text-2xl raleway_font" href="#">
-                  Article Title
-                </a>
-              </h1>
-              <p class="text-grey-darker text-2xl raleway_font">11/1/19</p>
-            </header>
-            <footer
-              class="flex items-center justify-between leading-none p-2 md:p-4"
-            >
-              <a
-                class="flex items-center no-underline hover:underline text-black"
-                href="#"
-              >
-                <img
-                  alt="Placeholder"
-                  class="block rounded-full"
-                  src="https://picsum.photos/32/32/?random"
-                />
-                <p class="ml-2 text-xl nothing_font font-black text-gray-400">Author Name</p>
-              </a>
-              <a
-                class="no-underline text-grey-darker hover:text-red-dark"
-                href="#"
-              >
-                <span class="raleway_font text-gray-400">Like</span>
-                <i class="fas fa-heart text-red-700"></i>
-              </a>
-            </footer>
+
+
+
+
+<!-- Like & Edit/Add Comment Section  -->
+
+
+
+
+
+
+        <!-- Column -->
+        <div class="my-8 px-4 w-auto ">
+          <!-- Article -->
+          <article
+            class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-2xl h-auto w-full"
+          >
+            <!-- Article Description -->
+            <main class="p-4  w-full  max-w-2xl">
+              <form action="#" method="POST">
+                <div class="shadow-2xl sm:rounded-md sm:overflow-hidden px-4  bg-gray-800  sm:p-6">
+                    <div>
+                      <label for="about" class="block  text-gray-200 font-bold text-2xl raleway_font pb-2">
+                        Leave a Comment Below:
+                      </label>
+                      <div class="mt-1">
+                        <textarea id="about" name="about" rows="15" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Tell us what you think about this article!"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="px-4 py-3 bg-gray-800  sm:px-6 justify-between">
+                    <div class="flex flex-row justify-between">
+                    <button type="submit" class="justify-center shadow-2xl" id="like">
+                      <img src="../assets/images/heart 32pxl.png" />
+                    </button>
+                    <button type="submit" class="justify-center shadow-2xl" id="offer_like">
+                      <img src="../assets/images/offer_heart 32pxl.png" />
+                    </button>
+                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-2xl text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                      Save
+                    </button>
+                  </div>
+                  </div>
+                </div>
+              </form>
+            </main>
           </article>
           <!-- END Article -->
         </div>
         <!-- END Column -->
-
-        
-   
-
-
-        
-   
-        
-
-        
-   
-        
-                
-
-
       </div>
     </div>
-  </body>
-</html>
+
+
+
+
+
+  <!-- Comments for the Single Post -->
+  <div class="container my-12 mx-auto px-4 md:px-12">
+    <div class="flex flex-wrap flex-col -mx-1 lg:-mx-4">
+      <!-- Column -->
+      <div class="my-8 px-4 w-auto">
+        <!-- Article -->
+        <article
+          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full "
+        >
+          <!-- Comment Description -->
+          <main class="p-4 max-w-5xl w-full ">
+            <p class="text-1xl p-2 raleway_font max-w-5xl w-full h-auto">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Aliquam maiores porro in fugit impedit, assumenda repellat
+              corporis id nulla laborum, consectetur reiciendis necessitatibus
+              praesentium soluta iste atque accusamus, aperiam quasi!
+            </p>
+          </main>
+          <!-- Article Total Likes and Comments -->
+          <footer
+            class="flex items-center justify-between leading-none p-2 md:p-4"
+          >
+            <a
+              class="flex items-center no-underline hover:underline text-black"
+              href="#"
+            >
+              <img
+                alt="Placeholder"
+                class="block rounded-full"
+                src="https://picsum.photos/32/32/?random"
+              />
+              <p class="ml-2 text-xl nothing_font font-black text-gray-400">
+                Author Name
+              </p>
+            </a>
+          </footer>
+        </article>
+        <!-- END Article -->
+      </div>
+      <!-- END Column -->
+
+
+
+
+      <!-- Column -->
+      <div class="my-8 px-4 w-auto">
+        <!-- Article -->
+        <article
+          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full "
+        >
+          <!-- Comment Description -->
+          <main class="p-4 max-w-5xl w-full ">
+            <p class="text-1xl p-2 raleway_font max-w-5xl w-full h-auto">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Aliquam maiores porro in fugit impedit, assumenda repellat
+              corporis id nulla laborum, consectetur reiciendis necessitatibus
+              praesentium soluta iste atque accusamus, aperiam quasi!
+            </p>
+          </main>
+          <!-- Article Total Likes and Comments -->
+          <footer
+            class="flex items-center justify-between leading-none p-2 md:p-4"
+          >
+            <a
+              class="flex items-center no-underline hover:underline text-black"
+              href="#"
+            >
+              <img
+                alt="Placeholder"
+                class="block rounded-full"
+                src="https://picsum.photos/32/32/?random"
+              />
+              <p class="ml-2 text-xl nothing_font font-black text-gray-400">
+                Author Name
+              </p>
+            </a>
+          </footer>
+        </article>
+        <!-- END Article -->
+      </div>
+      <!-- END Column -->
+
+
+
+
+
+      <!-- Column -->
+      <div class="my-8 px-4 w-auto">
+        <!-- Article -->
+        <article
+          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full "
+        >
+          <!-- Comment Description -->
+          <main class="p-4 max-w-5xl w-full ">
+            <p class="text-1xl p-2 raleway_font max-w-5xl w-full h-auto">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Aliquam maiores porro in fugit impedit, assumenda repellat
+              corporis id nulla laborum, consectetur reiciendis necessitatibus
+              praesentium soluta iste atque accusamus, aperiam quasi!
+            </p>
+          </main>
+          <!-- Article Total Likes and Comments -->
+          <footer
+            class="flex items-center justify-between leading-none p-2 md:p-4"
+          >
+            <a
+              class="flex items-center no-underline hover:underline text-black"
+              href="#"
+            >
+              <img
+                alt="Placeholder"
+                class="block rounded-full"
+                src="https://picsum.photos/32/32/?random"
+              />
+              <p class="ml-2 text-xl nothing_font font-black text-gray-400">
+                Author Name
+              </p>
+            </a>
+          </footer>
+        </article>
+        <!-- END Article -->
+      </div>
+      <!-- END Column -->
+
+
+
+
+
+      <!-- Column -->
+      <div class="my-8 px-4 w-auto">
+        <!-- Article -->
+        <article
+          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full "
+        >
+          <!-- Comment Description -->
+          <main class="p-4 max-w-5xl w-full ">
+            <p class="text-1xl p-2 raleway_font max-w-5xl w-full h-auto">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Aliquam maiores porro in fugit impedit, assumenda repellat
+              corporis id nulla laborum, consectetur reiciendis necessitatibus
+              praesentium soluta iste atque accusamus, aperiam quasi!
+            </p>
+          </main>
+          <!-- Article Total Likes and Comments -->
+          <footer
+            class="flex items-center justify-between leading-none p-2 md:p-4"
+          >
+            <a
+              class="flex items-center no-underline hover:underline text-black"
+              href="#"
+            >
+              <img
+                alt="Placeholder"
+                class="block rounded-full"
+                src="https://picsum.photos/32/32/?random"
+              />
+              <p class="ml-2 text-xl nothing_font font-black text-gray-400">
+                Author Name
+              </p>
+            </a>
+          </footer>
+        </article>
+        <!-- END Article -->
+      </div>
+      <!-- END Column -->
+
+
+    </div>
+  </div>
+
+  
+</body>
+</html>    
