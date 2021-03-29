@@ -1,84 +1,109 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google fonts CDN -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Montserrat&family=Nothing+You+Could+Do&family=Raleway:wght@200;400;700&family=Shadows+Into+Light&family=Special+Elite&family=Unica+One&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome CDN -->
-    <script src="https://kit.fontawesome.com/79ab8d8fde.js" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google fonts CDN -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Montserrat&family=Nothing+You+Could+Do&family=Raleway:wght@200;400;700&family=Shadows+Into+Light&family=Special+Elite&family=Unica+One&display=swap"
+    rel="stylesheet">
 
-    <!-- tailwinds css -->
-    <link href="../stylesheets/style.css" rel="stylesheet" />
-    <link rel="shortcut icon" type="image/png" href="../assets/images/guide 16pxl.png"/>
-    <title>Article Title</title>
-  </head>
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/79ab8d8fde.js" crossorigin="anonymous"></script>
 
-  <nav class="bg-indigo-900 h-auto">
-    <div class=" mx-auto px-2 sm:px-6 lg:px-8 bg-gray-800 pb-3">
-      <div class="relative flex items-center justify-between h-16 bg-gray-800">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden bg-gray-800">
-          <!-- Mobile menu button-->
-          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white bg-gray-800" aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <!--
+  <!-- tailwinds css -->
+  <link href="../stylesheets/style.css" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="../assets/images/guide 16pxl.png" />
+  <title>Article Title</title>
+</head>
+
+<nav class="bg-indigo-900 h-auto">
+  <div class=" mx-auto px-2 sm:px-6 lg:px-8 bg-gray-800 pb-3">
+    <div class="relative flex items-center justify-between h-16 bg-gray-800">
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden bg-gray-800">
+        <!-- Mobile menu button-->
+        <button type="button"
+          class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white bg-gray-800"
+          aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <!--
               Icon when menu is closed.
               Heroicon name: outline/menu
               Menu open: "hidden", Menu closed: "block"
             -->
-            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <!--
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!--
               Icon when menu is open.
               Heroicon name: outline/x
               Menu open: "block", Menu closed: "hidden"
             -->
-            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+          <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start bg-gray-800">
+        <div class="flex-shrink-0 flex items-center bg-gray-800 justify-around">
+          <img src="../assets/images/guide 32pxl.png" alt="logo" class="p-2" />
+          <span class="gloria_font text-gray-100 text-3xl py-2">Coding Bootcamp Survival Guide</span>
         </div>
-        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start bg-gray-800">
-          <div class="flex-shrink-0 flex items-center bg-gray-800 justify-around">
-            <img src="../assets/images/guide 32pxl.png" alt="logo" class="p-2"  />
-           <span class="gloria_font text-gray-100 text-3xl py-2">Coding Bootcamp Survival Guide</span>
-          </div>
-          <div class="hidden sm:block sm:ml-6 bg-gray-800">
-            <div class="flex space-x-4">
-              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page"><i class="fas fa-home text-2xl"></i></a>
+        <div class="hidden sm:block sm:ml-6 bg-gray-800">
+          <div class="flex space-x-4">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page"><i
+                class="fas fa-home text-2xl"></i></a>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pick a Camp</a>
+            <a href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pick a
+              Camp</a>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tools & Cheatsheets</a>
+            <a href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tools &
+              Cheatsheets</a>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pre-Course Help</a>
+            <a href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pre-Course
+              Help</a>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Front-End Design</a>
+            <a href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Front-End
+              Design</a>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Back-End Design</a>
+            <a href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Back-End
+              Design</a>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Self Care</a>
+            <a href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Self
+              Care</a>
 
-              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Finish Line!</a>
-              
-            </div>
+            <a href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Finish
+              Line!</a>
+
           </div>
         </div>
-        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-gray-800">
-          
-          <!-- Profile dropdown -->
-          <div class="ml-3 relative bg-gray-800">
-            <div>
-              <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-expanded="false" aria-haspopup="true">
-                <span class="sr-only">Open user menu</span>
-                <img class="h-8 w-8 rounded-full" src="../assets/images/user.png" alt="User Profile">
-              </button>
-            </div>
-            <!--
+      </div>
+      <div
+        class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-gray-800">
+
+        <!-- Profile dropdown -->
+        <div class="ml-3 relative bg-gray-800">
+          <div>
+            <button type="button"
+              class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              id="user-menu" aria-expanded="false" aria-haspopup="true">
+              <span class="sr-only">Open user menu</span>
+              <img class="h-8 w-8 rounded-full" src="../assets/images/user.png" alt="User Profile">
+            </button>
+          </div>
+          <!--
               Dropdown menu, show/hide based on menu state.
               Entering: "transition ease-out duration-100"
                 From: "transform opacity-0 scale-95"
@@ -87,16 +112,18 @@
                 From: "transform opacity-100 scale-100"
                 To: "transform opacity-0 scale-95"
             -->
-            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your Profile</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
-              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
-            </div>
+          <div
+            class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+            role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your Profile</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
           </div>
         </div>
       </div>
     </div>
-    </nav>
+  </div>
+</nav>
 
 <!-- end nav bar -->
 
@@ -107,18 +134,11 @@
       <!-- Column -->
       <div class="my-8 px-4 w-auto">
         <!-- Article -->
-        <article
-          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200"
-        >
-        <!-- Article Title and Date -->
-          <header
-            class="flex items-center justify-between leading-tight p-2 md:p-4"
-          >
+        <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200">
+          <!-- Article Title and Date -->
+          <header class="flex items-center justify-between leading-tight p-2 md:p-4">
             <h1 class="text-lg">
-              <a
-                class="no-underline hover:underline font-bold text-2xl raleway_font"
-                href="#"
-              >
+              <a class="no-underline hover:underline font-bold text-2xl raleway_font" href="#">
                 Article Title
               </a>
             </h1>
@@ -126,11 +146,7 @@
           </header>
           <!-- Article Image -->
           <a href="#">
-            <img
-              alt="Placeholder"
-              class="block h-auto w-full max-w-2xl"
-              src="https://picsum.photos/1000/800/?random"
-            />
+            <img alt="Placeholder" class="block h-auto w-full max-w-2xl" src="https://picsum.photos/1000/800/?random" />
           </a>
           <!-- Article Description -->
           <main class="p-4 max-w-2xl">
@@ -142,30 +158,16 @@
             </p>
           </main>
           <!-- Article Total Likes and Comments -->
-          <footer
-            class="flex items-center justify-between leading-none p-2 md:p-4"
-          >
-            <a
-              class="flex items-center no-underline hover:underline text-black"
-              href="#"
-            >
-              <img
-                alt="Placeholder"
-                class="block rounded-full"
-                src="https://picsum.photos/32/32/?random"
-              />
+          <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+            <a class="flex items-center no-underline hover:underline text-black" href="#">
+              <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
               <p class="ml-2 text-xl nothing_font font-black text-gray-400">
                 Author Name
               </p>
             </a>
-            <a
-              class="no-underline text-grey-darker hover:text-red-dark"
-              href="#"
-            >
-              <span class="raleway_font text-gray-400"
-                >0 Like <i class="fas fa-heart text-red-700"></i> | 0
-                Comments</span
-              >
+            <a class="no-underline text-grey-darker hover:text-red-dark" href="#">
+              <span class="raleway_font text-gray-400">0 Like <i class="fas fa-heart text-red-700"></i> | 0
+                Comments</span>
             </a>
           </footer>
         </article>
@@ -177,54 +179,55 @@
 
 
 
-<!-- Like & Edit/Add Comment Section  -->
+      <!-- Like & Edit/Add Comment Section  -->
 
 
 
 
 
 
-        <!-- Column -->
-        <div class="my-8 px-4 w-auto ">
-          <!-- Article -->
-          <article
-            class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-2xl h-auto w-full"
-          >
-            <!-- Article Description -->
-            <main class="p-4  w-full  max-w-2xl">
-              <form action="#" method="POST">
-                <div class="shadow-2xl sm:rounded-md sm:overflow-hidden px-4  bg-gray-800  sm:p-6">
-                    <div>
-                      <label for="about" class="block  text-gray-200 font-bold text-2xl raleway_font pb-2">
-                        Leave a Comment Below:
-                      </label>
-                      <div class="mt-1">
-                        <textarea id="about" name="about" rows="15" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Tell us what you think about this article!"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="px-4 py-3 bg-gray-800  sm:px-6 justify-between">
-                    <div class="flex flex-row justify-between">
-                    <button type="submit" class="justify-center shadow-2xl" id="like">
-                      <img src="../assets/images/heart 32pxl.png" />
-                    </button>
-                    <button type="submit" class="justify-center shadow-2xl" id="offer_like">
-                      <img src="../assets/images/offer_heart 32pxl.png" />
-                    </button>
-                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-2xl text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                      Save
-                    </button>
-                  </div>
+      <!-- Column -->
+      <div class="my-8 px-4 w-auto ">
+        <!-- Article -->
+        <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-2xl h-auto w-full">
+          <!-- Article Description -->
+          <main class="p-4  w-full  max-w-2xl">
+            <form action="#" method="POST">
+              <div class="shadow-2xl sm:rounded-md sm:overflow-hidden px-4  bg-gray-800  sm:p-6">
+                <div>
+                  <label for="about" class="block  text-gray-200 font-bold text-2xl raleway_font pb-2">
+                    Leave a Comment Below:
+                  </label>
+                  <div class="mt-1">
+                    <textarea id="about" name="about" rows="15"
+                      class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+                      placeholder="Tell us what you think about this article!"></textarea>
                   </div>
                 </div>
-              </form>
-            </main>
-          </article>
-          <!-- END Article -->
-        </div>
-        <!-- END Column -->
+              </div>
+              <div class="px-4 py-3 bg-gray-800  sm:px-6 justify-between">
+                <div class="flex flex-row justify-between">
+                  <button type="submit" class="justify-center shadow-2xl" id="like">
+                    <img src="../assets/images/heart 32pxl.png" />
+                  </button>
+                  <button type="submit" class="justify-center shadow-2xl" id="offer_like">
+                    <img src="../assets/images/offer_heart 32pxl.png" />
+                  </button>
+                  <button type="submit"
+                    class="inline-flex justify-center py-2 px-4 border border-transparent shadow-2xl text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Save
+                  </button>
+                </div>
+              </div>
       </div>
+      </form>
+      </main>
+      </article>
+      <!-- END Article -->
     </div>
+    <!-- END Column -->
+  </div>
+  </div>
 
 
 
@@ -236,33 +239,19 @@
       <!-- Column -->
       <div class="my-8 px-4 w-auto">
         <!-- Article -->
-        <article
-          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full "
-        >
+        <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full ">
           <!-- Comment Description -->
           <main class="p-4 max-w-5xl w-full ">
             <p class="text-1xl p-2 raleway_font max-w-5xl w-full h-auto">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Aliquam maiores porro in fugit impedit, assumenda repellat
-              corporis id nulla laborum, consectetur reiciendis necessitatibus
-              praesentium soluta iste atque accusamus, aperiam quasi!
+              {{comment_text}}
             </p>
           </main>
           <!-- Article Total Likes and Comments -->
-          <footer
-            class="flex items-center justify-between leading-none p-2 md:p-4"
-          >
-            <a
-              class="flex items-center no-underline hover:underline text-black"
-              href="#"
-            >
-              <img
-                alt="Placeholder"
-                class="block rounded-full"
-                src="https://picsum.photos/32/32/?random"
-              />
+          <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+            <a class="flex items-center no-underline hover:underline text-black" href="#">
+              <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
               <p class="ml-2 text-xl nothing_font font-black text-gray-400">
-                Author Name
+                {{user.username}} on {{format_date created_at}}
               </p>
             </a>
           </footer>
@@ -277,9 +266,7 @@
       <!-- Column -->
       <div class="my-8 px-4 w-auto">
         <!-- Article -->
-        <article
-          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full "
-        >
+        <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full ">
           <!-- Comment Description -->
           <main class="p-4 max-w-5xl w-full ">
             <p class="text-1xl p-2 raleway_font max-w-5xl w-full h-auto">
@@ -290,18 +277,9 @@
             </p>
           </main>
           <!-- Article Total Likes and Comments -->
-          <footer
-            class="flex items-center justify-between leading-none p-2 md:p-4"
-          >
-            <a
-              class="flex items-center no-underline hover:underline text-black"
-              href="#"
-            >
-              <img
-                alt="Placeholder"
-                class="block rounded-full"
-                src="https://picsum.photos/32/32/?random"
-              />
+          <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+            <a class="flex items-center no-underline hover:underline text-black" href="#">
+              <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
               <p class="ml-2 text-xl nothing_font font-black text-gray-400">
                 Author Name
               </p>
@@ -319,9 +297,7 @@
       <!-- Column -->
       <div class="my-8 px-4 w-auto">
         <!-- Article -->
-        <article
-          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full "
-        >
+        <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full ">
           <!-- Comment Description -->
           <main class="p-4 max-w-5xl w-full ">
             <p class="text-1xl p-2 raleway_font max-w-5xl w-full h-auto">
@@ -332,18 +308,9 @@
             </p>
           </main>
           <!-- Article Total Likes and Comments -->
-          <footer
-            class="flex items-center justify-between leading-none p-2 md:p-4"
-          >
-            <a
-              class="flex items-center no-underline hover:underline text-black"
-              href="#"
-            >
-              <img
-                alt="Placeholder"
-                class="block rounded-full"
-                src="https://picsum.photos/32/32/?random"
-              />
+          <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+            <a class="flex items-center no-underline hover:underline text-black" href="#">
+              <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
               <p class="ml-2 text-xl nothing_font font-black text-gray-400">
                 Author Name
               </p>
@@ -361,9 +328,7 @@
       <!-- Column -->
       <div class="my-8 px-4 w-auto">
         <!-- Article -->
-        <article
-          class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full "
-        >
+        <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full ">
           <!-- Comment Description -->
           <main class="p-4 max-w-5xl w-full ">
             <p class="text-1xl p-2 raleway_font max-w-5xl w-full h-auto">
@@ -374,18 +339,9 @@
             </p>
           </main>
           <!-- Article Total Likes and Comments -->
-          <footer
-            class="flex items-center justify-between leading-none p-2 md:p-4"
-          >
-            <a
-              class="flex items-center no-underline hover:underline text-black"
-              href="#"
-            >
-              <img
-                alt="Placeholder"
-                class="block rounded-full"
-                src="https://picsum.photos/32/32/?random"
-              />
+          <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+            <a class="flex items-center no-underline hover:underline text-black" href="#">
+              <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
               <p class="ml-2 text-xl nothing_font font-black text-gray-400">
                 Author Name
               </p>
@@ -400,6 +356,7 @@
     </div>
   </div>
 
-  
+
 </body>
-</html>    
+
+</html>
