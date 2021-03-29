@@ -35,14 +35,14 @@
                   {{#if (check_for_user_id post.likes userId) }}
                   {{#each post.likes}}
                   {{#if (check_if_equal user_id ../userId)}}
-                  <button type="submit" class="liked-button justify-center shadow-2xl" id="like-id-{{id}}">
-                    <img src="../assets/images/offer_heart 32pxl.png" />
+                  <button type="submit" class="justify-center shadow-2xl">
+                    <img class="liked-button" id="like-id-{{id}}" src="../assets/images/offer_heart 32pxl.png" />
                   </button>
                   {{/if}}
                   {{/each}}
                   {{else}}
-                  <button type="submit" class="like-button justify-center shadow-2xl" id="like">
-                    <img src="../assets/images/heart 32pxl.png" />
+                  <button type="submit" class="justify-center shadow-2xl">
+                    <img class="like-button" id="like" src="../assets/images/heart 32pxl.png" />
                   </button>
                   {{/if}}
                 </div>
