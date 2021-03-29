@@ -36,7 +36,7 @@ User.init(
     },
     profile_pic: {
         type: DataTypes.STRING,
-        defaultValue: `/assets/images/user.jpg`
+        defaultValue: `/assets/images/user.png`
     },
     email: {
       type: DataTypes.STRING,

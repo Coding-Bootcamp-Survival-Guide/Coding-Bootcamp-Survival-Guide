@@ -4,7 +4,39 @@
 <div class="container my-12 mx-auto px-4 md:px-12 ">
   <div class="flex flex-wrap -mx-1 lg:-mx-4">
 
-    {{> post-info post }}
+      <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200">
+    <a href="{{post.post_url}}">
+      <img alt="Placeholder" class="block h-auto w-full max-w-xl max-h-96" src="{{post.post_image}}" />
+    </a>
+
+    <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+      <h1 class="text-lg">
+        <a class="no-underline hover:underline font-bold text-2xl raleway_font" href="{{post.post_url}}">
+          {{post.title}}
+        </a>
+      </h1>
+      <p class="text-grey-darker text-2xl raleway_font">{{format_date post.created_at}}</p>
+    </header>
+    <div class="text-grey-darker px-4">
+      {{post.post_text}}
+    </div>
+    <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+      <a class="flex items-center no-underline hover:underline text-black" href="/post/{{post.id}}">
+        <img alt="Placeholder" class="block rounded-full h-8 w-8" src="{{post.user.profile_pic}}" />
+        <p class="ml-2 text-xl nothing_font font-black text-gray-400">
+          {{post.user.username}}</p>
+      </a>
+      <a class="no-underline text-grey-darker hover:underline" href="/post/{{post.id}}">
+        <span class="raleway_font text-gray-400">
+          {{post.likes.length}} {{format_plural "like" post.likes.length}} <i class="fas fa-heart text-red-700"></i>
+          |
+          {{post.comments.length}} {{format_plural "comment" post.comments.length}}
+        </span>
+      </a>
+    </footer>   
+
+  </article>
+
     
     {{#if loggedIn}}
     <!-- Column -->
