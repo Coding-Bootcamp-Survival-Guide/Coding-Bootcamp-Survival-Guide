@@ -108,7 +108,7 @@ router.post('/', withAuth, (req, res) => {
     title: req.body.title,
     category_name: req.body.category_name,
     category_id: category_id,
-    post_text: req.body.post_text,
+    post_text: req.body.post_text.trim(),
     post_url: req.body.post_url,
     post_image: req.body.post_image,
     user_id: req.session.user_id
