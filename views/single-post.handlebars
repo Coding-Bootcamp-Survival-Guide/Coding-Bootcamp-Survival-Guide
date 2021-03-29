@@ -36,13 +36,13 @@
                   {{#each post.likes}}
                   {{#if (check_if_equal user_id ../userId)}}
                   <button type="submit" class="justify-center shadow-2xl">
-                    <img class="liked-button" id="like-id-{{id}}" src="../assets/images/offer_heart 32pxl.png" />
+                    <img class="liked-button" id="like-id-{{id}}" src="../assets/images/heart 32pxl.png" />
                   </button>
                   {{/if}}
                   {{/each}}
                   {{else}}
                   <button type="submit" class="justify-center shadow-2xl">
-                    <img class="like-button" id="like" src="../assets/images/heart 32pxl.png" />
+                    <img class="like-button" id="like" src="../assets/images/offer_heart 32pxl.png" />
                   </button>
                   {{/if}}
                 </div>
