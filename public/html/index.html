@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google fonts CDN -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Montserrat&family=Nothing+You+Could+Do&family=Raleway:wght@200;400;700&family=Shadows+Into+Light&family=Special+Elite&family=Unica+One&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/79ab8d8fde.js" crossorigin="anonymous"></script>
+
+    <!-- tailwinds css -->
+    <link href="../stylesheets/style.css" rel="stylesheet" />
+    <link rel="shortcut icon" type="image/png" href="../assets/images/guide 16pxl.png"/>
+    <title>Coding Bootcamp Suvival Guide</title>
+  </head>
+
+  <nav class="bg-indigo-900 h-auto">
+    <div class=" mx-auto px-2 sm:px-6 lg:px-8 bg-gray-800 pb-3">
+      <div class="relative flex items-center justify-between h-16 bg-gray-800">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden bg-gray-800">
+          <!-- Mobile menu button-->
+          <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white bg-gray-800" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
+              Heroicon name: outline/menu
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!--
+              Icon when menu is open.
+              Heroicon name: outline/x
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start bg-gray-800">
+          <div class="flex-shrink-0 flex items-center bg-gray-800 justify-around">
+            <img src="../assets/images/guide 32pxl.png" alt="logo" class="p-2"  />
+           <span class="gloria_font text-gray-100 text-3xl py-2">Coding Bootcamp Survival Guide</span>
+          </div>
+          <div class="hidden sm:block sm:ml-6 bg-gray-800">
+            <div class="flex space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page"><i class="fas fa-home text-2xl"></i></a>
+
+              <a href="/category/pick-camp" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pick a Camp</a>
+
+              <a href="/category/pre-course" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Tools & Cheatsheets</a>
+
+              <a href="/category/tools" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pre-Course Help</a>
+
+              <a href="/category/frontend" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Front-End Design</a>
+
+              <a href="/category/backend" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Back-End Design</a>
+
+              <a href="/category/self-care" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Self Care</a>
+
+              <a href="/category/finish-line" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Finish Line!</a>
+              
+            </div>
+          </div>
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 bg-gray-800">
+          
+          <!-- Profile dropdown -->
+          <div class="ml-3 relative bg-gray-800">
+            <div>
+              <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu" aria-expanded="false" aria-haspopup="true">
+                <span class="sr-only">Open user menu</span>
+                <img class="h-8 w-8 rounded-full" src="../assets/images/user.png" alt="User Profile">
+              </button>
+            </div>
+            <!--
+              Dropdown menu, show/hide based on menu state.
+              Entering: "transition ease-out duration-100"
+                From: "transform opacity-0 scale-95"
+                To: "transform opacity-100 scale-100"
+              Leaving: "transition ease-in duration-75"
+                From: "transform opacity-100 scale-100"
+                To: "transform opacity-0 scale-95"
+            -->
+            <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+              {{#if loggedIn}}
+              {{#if isAdmin}}
+              <a href="/dashboard/admin" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                role="menuitem">Your Profile</a>
+              {{else}}
+              <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your
+                Profile</a>
+              {{/if}}
+              <button id='logout' class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign
+                out</button>
+              {{else}}
+              <a href="/login" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign
+                in</a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </nav>
+
+<!-- end nav bar -->
+
+  <body class="bg-indigo-900">
+    <div class="container my-12 mx-auto px-4 justify-center  ">
+      <div class="flex flex-wrap flex-row mx-auto -m-4 ">
+
+        <div class="flex flex-wrap flex-row  justify-center w-full md:w-full lg:w-1/2 xl:w-1/2">
+
+          <div class="p-2 px-4 w-full lg:w-1/2 xl:w-1/2 h-auto justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2 text-center">
+              <button id="login" class="justify-center" onclick="location.href='/login'"><img src="../assets/images/008-login.png" /></button>
+              <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Login</p>
+            </div>
+          </div>
+        
+          
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 h-auto justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+              <button id="pick" class="justify-center" onclick="location.href='/category/pick-camp'"><img src="../assets/images/001-choose.png" /></button>
+              <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Pick a Bootcamp</p>
+            </div>
+          </div>
+        
+          
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+              <button id="precourse" class="justify-center" onclick="location.href='/category/pre-course'"><img src="../assets/images/004-start-line.png" /></button>
+              <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Pre-Course Help</p>
+            </div>
+          </div>
+        
+          
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+              <button id="tools" class="justify-center" onclick="location.href='/category/tools'"><img src="../assets/images/007-tools-and-utensils.png" /></button>
+              <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Tools & Cheatsheets</p>
+            </div>
+          </div>
+        
+          
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+              <button id="front_end" class="justify-center" onclick="location.href='/category/frontend'"><img src="../assets/images/002-code.png" /></button>
+              <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Front-End Design</p>
+            </div>
+          </div>
+        
+          
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+              <button id="back_end" class="justify-center" onclick="location.href='/category/backend'"><img src="../assets/images/003-database-storage.png" /></button>
+              <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Back-End Design</p>
+            </div>
+          </div>
+        
+          
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+              <button id="self_care" class="justify-center" onclick="location.href='/category/self-care'"><img src="../assets/images/005-relax.png" /></button>
+              <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Self Care</p>
+            </div>
+          </div>
+        
+          
+          <div class="p-2 px-4  w-full lg:w-1/2 xl:w-1/2 justify-center">
+            <div class="bg-gray-800 rounded-lg shadow-2xl p-2  text-center">
+              <button id="finish_line" class="justify-center" onclick="location.href='/category/finish-line'"><img src="../assets/images/006-trophy.png" /></button>
+              <p class="ml-2 text-xl gloria_font font-black text-gray-200 text-center ">Finish Line!</p>
+            </div>
+          </div>
+        
+          
+         
+        
+          
+
+
+
+        </div>
+
+<!-- end buttons -->
+
+        <div class="-m-4 p-4 mx-auto overflow-hidden hidden md:w-1/2 lg:block xl:block justify-center ">
+          <div class=" rounded-lg  p-4 m-4 ">
+            <p class="text-gray-200 text-4xl text-center gloria_font font-black p- 2 leading-relaxed">Welcome to the </br> 
+              Coding Bootcamp Survival Guide! </p>
+            <img src="../assets/images/student_transparent_bg_v3.png" alt="Student" class="justify-center text-center p-6 mx-auto" width="70%" height="70%"/>
+            <div class="-m-4 rounded-lg shadow-lg p-4 bg-gray-800">
+              <p class="ml-2 text-1xl gloria_font  text-center text-indigo-200">Here you will find a curated collection of resources to help you along your journey. We have everything from looking for help picking a bootcamp, what to do after it is done and you've crossed the Finish Line! </br></br> Don't forget to create an account to save your favorite articles and resources to your personal profile.</p>
+              </div>
+          </div>
+        </div>
+        
+
+        
+        
+          
+          
+          
+        
+         
+        
+       
+        </div>
+
+
+        
+   
+        
+
+        
+   
+        
+                
+
+
+      </div>
+    </div>
+  </body>
+</html>

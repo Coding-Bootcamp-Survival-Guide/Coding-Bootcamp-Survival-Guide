@@ -1,13 +1,30 @@
-<div class="comments">
-    {{#each this}}
-    <section class="comment">
-        <div class="meta">
-            {{!-- This works essentially the same way as calling format_date(created_at) --}}
-            {{user.username}} on {{format_date created_at}}
+<div class="container  mx-auto px-4 md:px-12  justify-center ">
+    <div class="flex flex-wrap flex-col mx-auto  justify-center">
+        {{#each this}}
+        <!-- Column -->
+        <div class="mx-auto w-full  justify-center">
+        <div class="my-8 px-4 ">
+            <!-- Article -->
+            <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-5xl h-auto w-full  justify-center mx-auto">
+                <!-- Comment Description -->
+                <main class="p-4 max-w-5xl w-full ">
+                    <p class="text-1xl p-2 raleway_font max-w-5xl w-full h-auto">
+                        {{comment_text}}
+                    </p>
+                </main>
+                <!-- Article Total Likes and Comments -->
+                <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+                    <a class="flex items-center no-underline hover:underline text-black" href="#">
+                        <img alt="Placeholder" class="block rounded-full" src="https://picsum.photos/32/32/?random" />
+                        <p class="ml-2 text-xl nothing_font font-black text-gray-400">
+                            {{user.username}} on {{format_date created_at}}
+                        </p>
+                    </a>
+                </footer>
+            </article>
+            <!-- END Article -->
         </div>
-        <div class="text">
-            {{comment_text}}
         </div>
-    </section>
-    {{/each}}
+        {{/each}}
+    </div>
 </div>

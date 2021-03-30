@@ -1,94 +1,96 @@
 {{#unless isAdmin}}
-<section>
 
-  <h2>Your Saved Posts</h2>
-  {{#if likes.length}}
+{{#if cat1Likes.length}}
+<p class="text-gray-200 text-4xl text-left gloria_font font-black px-16 p-2 leading-relaxed">Picking a Camp</p>
+  <div class="container my-12 mx-auto px-4 md:px-12 ">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    {{#each cat1Likes as |likedPost|}}
+      <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+        {{> post-info likedPost}}
+      </div>
+    {{/each}}
+    </div>
+  </div>
+{{/if}}
 
-    {{!--checking for category 1 (picking)  --}}
-    {{#if (check_for_category likes 1)}}
-      {{#each likes as |like|}}
-        {{#if (check_if_equal like.post.category 1)}}
-          <h3>Picking a Bootcamp</h3>
-          <ol class="like-list">
-            <li>
-              {{> post-info like.post}}
-            </li>
-          </ol>
-        {{/if}}
-      {{/each}}
-    {{/if}}
+{{#if cat2Likes.length}}
+  <p class="text-gray-200 text-4xl text-left gloria_font font-black px-16 p-2 leading-relaxed">Pre-Course Prep</p>
+  <div class="container my-12 mx-auto px-4 md:px-12 ">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    {{#each cat2Likes as |likedPost|}}
+      <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+        {{> post-info likedPost}}
+      </div>
+    {{/each}}
+    </div>
+  </div>
+{{/if}}
 
-    {{!--checking for category 2 (precourse)  --}}
-    {{#if (check_for_category likes 2)}}
-      {{#each likes as |like|}}
-        {{#if (check_if_equal like.post.category 2)}}
-          <h3>Pre-Course Work</h3>
-          <ol class="like-list">
-            <li>
-              {{> post-info like.post}}
-            </li>
-          </ol>
-        {{/if}}
-      {{/each}}
-    {{/if}}
+{{#if cat3Likes.length}}
+<p class="text-gray-200 text-4xl text-left gloria_font font-black px-16 p-2 leading-relaxed">Tools &amp; Cheatsheets</p>
+  <div class="container my-12 mx-auto px-4 md:px-12 ">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    {{#each cat3Likes as |likedPost|}}
+      <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+        {{> post-info likedPost}}
+      </div>
+    {{/each}}
+    </div>
+  </div>
+{{/if}}
 
-    {{!--checking for category 3 (tools)  --}}
-    {{#if (check_for_category likes 3)}}
-      {{#each likes as |like|}}
-        {{#if (check_if_equal like.post.category 3)}}
-          <h3>CheatSheets &amp; Tools</h3>
-          <ol class="like-list">
-            <li>
-              {{> post-info like.post}}
-            </li>
-          </ol>
-        {{/if}}
-      {{/each}}
-    {{/if}}
+{{#if cat4Likes.length}}
+<p class="text-gray-200 text-4xl text-left gloria_font font-black px-16 p-2 leading-relaxed">Front-End Design</p>
+  <div class="container my-12 mx-auto px-4 md:px-12 ">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    {{#each cat4Likes as |likedPost|}}
+      <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+        {{> post-info likedPost}}
+      </div>
+    {{/each}}
+    </div>
+  </div>
+{{/if}}
 
-    {{!--checking for category 4 (frontend)  --}}
-    {{#if (check_for_category likes 4)}}
-      {{#each likes as |like|}}
-        {{#if (check_if_equal like.post.category 4)}}
-          <h3>Front-End</h3>
-          <ol class="like-list">
-            <li>
-              {{> post-info like.post}}
-            </li>
-          </ol>
-        {{/if}}
-      {{/each}}
-    {{/if}}
+{{#if cat5Likes.length}}
+<p class="text-gray-200 text-4xl text-left gloria_font font-black px-16 p-2 leading-relaxed">Back-End Design</p>
+  <div class="container my-12 mx-auto px-4 md:px-12 ">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    {{#each cat5Likes as |likedPost|}}
+      <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+        {{> post-info likedPost}}
+      </div>
+    {{/each}}
+    </div>
+  </div>
+{{/if}}
 
-    {{!--checking for category 5 (backend)  --}}
-    {{#if (check_for_category likes 5)}}
-      {{#each likes as |like|}}
-        {{#if (check_if_equal like.post.category 5)}}
-          <h3>Back-End</h3>
-          <ol class="like-list">
-            <li>
-              {{> post-info like.post}}
-            </li>
-          </ol>
-        {{/if}}
-      {{/each}}
-    {{/if}}
+{{#if cat6Likes.length}}
+<p class="text-gray-200 text-4xl text-left gloria_font font-black px-16 p-2 leading-relaxed">Self-Care</p>
+  <div class="container my-12 mx-auto px-4 md:px-12 ">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    {{#each cat6Likes as |likedPost|}}
+      <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+        {{> post-info likedPost}}
+      </div>
+    {{/each}}
+    </div>
+  </div>
+{{/if}}
 
-    {{!--checking for category 6 (self-care)  --}}
-    {{#if (check_for_category likes 6)}}
-      {{#each likes as |like|}}
-        {{#if (check_if_equal like.post.category 6)}}
-          <h3>Self-Care</h3>
-          <ol class="like-list">
-            <li>
-              {{> post-info like.post}}
-            </li>
-          </ol>
-        {{/if}}
-      {{/each}}
-    {{/if}}
+{{#if cat7Likes.length}}
+<p class="text-gray-200 text-4xl text-left gloria_font font-black px-16 p-2 leading-relaxed">Finish-Line!</p>
+  <div class="container my-12 mx-auto px-4 md:px-12 ">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4">
+    {{#each cat7Likes as |likedPost|}}
+      <div class="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+        {{> post-info likedPost}}
+      </div>
+    {{/each}}
+    </div>
+  </div>
+{{/if}}
 
-
-  {{/if}}
-</section>
 {{/unless}}
+
+<script> document.title = "Dashboard" </script>

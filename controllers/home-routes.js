@@ -3,7 +3,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
-
 const { Post, User, Comment, Like } = require('../models');
 
 // Because we've hooked up a template engine, we can now use res.render() and specify which template we want to use. 
@@ -15,8 +14,10 @@ router.get('/', (req, res) => {
         'id',
         'post_text',
         'post_url',
+        'post_image',
         'title',
-        'category',
+        'category_name',
+        'category_id',
         'created_at'
       ],
       include: [
@@ -30,7 +31,7 @@ router.get('/', (req, res) => {
         },
         {
           model: User,
-          attributes: ['username']
+          attributes: ['username', 'profile_pic', 'bootcamp']
         },
         {
           model: Like,
@@ -52,6 +53,7 @@ router.get('/', (req, res) => {
         res.render('homepage', {
           posts,
           loggedIn: req.session.loggedIn,
+          profilePic: req.session.profilePic,
           isAdmin: req.session.isAdmin
         });
     })
@@ -79,8 +81,10 @@ router.get('/post/:id', (req, res) => {
       'id',
       'post_text',
       'post_url',
+      'post_image',
       'title',
-      'category',
+      'category_name',
+      'category_id',
       'created_at'
     ],
     include: [
@@ -94,7 +98,7 @@ router.get('/post/:id', (req, res) => {
       },
       {
         model: User,
-        attributes: ['username']
+        attributes: ['username', 'profile_pic', 'bootcamp']
       },
       {
         model: Like,
@@ -120,6 +124,7 @@ router.get('/post/:id', (req, res) => {
         post,
         loggedIn: req.session.loggedIn,
         userId: req.session.user_id,
+        profilePic: req.session.profilePic,
         isAdmin: req.session.isAdmin
       });
     })

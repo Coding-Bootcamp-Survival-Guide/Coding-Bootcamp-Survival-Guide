@@ -1,25 +1,105 @@
-<section>
-  <h2>Create New Post</h2>
+{{!-- <!-- Header Start --> --}}
+<div class="my-1 w-full lg:my-4  ">
+  <p class="text-gray-200 text-4xl text-left gloria_font font-black px-16 p-2 leading-relaxed">Create a New Post</p>
+</div>
+{{!-- <!-- Header End --> --}}
 
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-category">Category (1 = pick a camp, 2 = pre-course, 3 = tools, 4 = front-end, 5 = back-end, 6 = decompress)</label>
-      <input id="post-category" name="post-category" />
-    </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
-    <div>
-      <label for="post-text">Post</label>
-      <textarea class="post-text" name="post-text" type="text"></textarea> 
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
+{{!-- New Post Form Start --}}
+<div class="container my-12 mx-auto px-4 md:px-12 w-full ">
+<div class="flex flex-wrap w-full max-w-3xl mx-auto">
+
+    {{!-- <div> --}}
+        <div class="mt-5 md:mt-0 max-w-3xl w-full mx-auto">
+          <form class="new-post-form max-w-3xl mx-auto" method="POST">
+            <div class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-3xl h-auto w-full">
+              <div class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-3xl h-auto w-full">
+
+                <div class="flex flex-flow flex-col w-full p-4">
+                  <div class="">
+                    <label for="post-title" class="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Title
+                    </label>
+                    <div class="mx-1 mb-2 rounded-md shadow-sm">
+                      <input type="text" name="post-title" id="post-title"
+                        class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2"
+                        placeholder="Title of Post">
+                    </div>
+                  </div>
+                
+
+                <div class="flex flex-flow flex-col w-full mt-2">
+                  <div class="">
+                    <label for="post-category" class="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Post Category
+                    </label>
+                    <div class="mt-1">
+                      <select id="post-category" name="post-category" autocomplete="post-category" class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2 max-w-xs">                       
+                        <option value="pick-camp" class="p-1">Picking a Bootcamp</option>
+                        <option value="pre-course" class="p-1">Pre-Course Prep</option>
+                        <option value="tools" class="p-1">Tools & Cheatsheets</option>
+                        <option value="frontend" class="p-1">Front End</option>
+                        <option value="backend" class="p-1">Back End</option>
+                        <option value="self-care" class="p-1">Self Care</option>
+                        <option value="finish-line" class="p-1">Finish Line</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-flow flex-col w-full mt-2">
+                  <div class="">
+                    <label for="post-url" class="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Post URL
+                    </label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                      <input type="text" name="post-url" id="post-url"
+                        class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2"
+                        placeholder="http://www.example.com">
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-flow flex-col w-full mt-2">
+                  <div class="">
+                    <label for="post-image" class="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Image URL
+                    </label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                      <input type="text" name="post-image" id="post-image"
+                        class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2"
+                        placeholder="http://www.example.com">
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-flow flex-col w-full mt-2">
+                  <div class="">
+                    <label for="post-text" class="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Post
+                    </label>
+                    <div class="mt-1">
+                      <textarea id="post-text" name="post-text" rows="10"
+                        class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2"
+                        placeholder="Please describe your post here..."></textarea>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="px-4 py-3 text-right sm:px-6">
+                <button class ="btn inline-flex justify-center py-2 px-4 border border-transparent shadow-2xl text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit"
+                  >
+                  Save
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+
+  </div>
+</div>
+
+<script> document.title = "New Post" </script>
 
 <script src="/javascript/add-post.js"></script>

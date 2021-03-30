@@ -1,37 +1,132 @@
 {{!-- USED BY controllers/home-routes.js --}}
 
 {{!-- to include a partial use > and then name of file and object passing --}}
-{{> post-info post }}
+<div class="container mt-12 mx-auto px-4 md:px-12 justify-center ">
+  <div class="flex flex-wrap justify-center ">
+      {{!-- Article w/ Comments, Author, footer --}}
+      {{!-- <!-- Column --> --}}
+      <div class="my-8 px-4 w-auto">
+        {{!-- <!-- Article --> --}}
+      <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200">
 
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+      <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+      <h1 class="text-lg">
+        <a class="no-underline hover:underline font-bold text-2xl raleway_font" href="{{post.post_url}}">
+          {{post.title}}
+        </a>
+      </h1>
+      <p class="text-grey-darker text-2xl raleway_font">{{format_date post.created_at}}</p>
+    </header>
 
-  <div>
-    <div class="buttons">
-    {{!--  if I already liked on it the session user id === the like user id      --}}
-    {{!--  if I want to remove the like i need the like id with the user id matching the session id      --}}
 
-      {{#if (check_for_user_id post.likes userId) }}
-        {{#each post.likes}}
-          {{#if (check_if_equal user_id ../userId)}}
-            <button class="liked-button" type="submit" id="like-id-{{id}}"></button>
-          {{/if}}
-        {{/each}}
-      {{else}}
-        <button class="like-button" type="submit"></button>
-      {{/if}}
+        {{!-- <!-- Article Image --> --}}
+        <div class="flex flex-wrap content-center">
+    <a href="{{post.post_url}}" class=" mx-auto px-auto">
+      <img alt="Article Image" class="block h-auto w-full max-w-xl max-h-96" src="{{post.post_image}}" />
+    </a>
     </div>
-    <button class="submit-button" type="submit">add comment</button>
+
+    {{!-- <!-- Article Description --> --}}
+    <main class="p-4 max-w-2xl">
+    <P class="text-1xl p-2 raleway_font w-auto max-w-2xl">
+      {{post.post_text}}
+    </P>
+    </main>
+
+    {{!-- <!-- Article Total Likes and Comments --> --}}
+    <footer class="flex items-center justify-between leading-none p-2 md:p-4">
+      <a class="flex items-center no-underline hover:underline text-black" href="/post/{{post.id}}">
+        <img alt="Profile Pic" class="block rounded-full h-8 w-8" src="{{post.user.profile_pic}}" />
+        <p class="ml-2 text-xl nothing_font font-black text-gray-400">
+          {{post.user.username}}</p>
+      </a>
+      <a class="no-underline text-grey-darker hover:text-red-dark" href="/post/{{post.id}}">
+        <span class="raleway_font text-gray-400">
+          {{post.likes.length}} {{format_plural "Like" post.likes.length}} <i class="fas fa-heart text-red-700"></i>
+          |
+          {{post.comments.length}} {{format_plural "Comment" post.comments.length}}
+        </span>
+      </a>
+    </footer>   
+  </article>
+{{!-- <!-- END Article --> --}}
+      </div>
+      {{!-- <!-- END Column --> --}}
+
+    
+
+
+
+{{!-- <!-- Like & Edit/Add Comment Section  --> --}}
+
+
+
+
+
+
+    {{#if loggedIn}}
+    {{!-- <!-- Column --> --}}
+    <div class="my-8 px-4 w-auto ">
+      {{!-- <!-- Article --> --}}
+      <article class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-2xl h-auto w-full">
+        {{!-- <!-- Article Description --> --}}
+        <main class="p-4  w-full  max-w-2xl">
+          <form class="comment-form" method="POST">
+            <div class="shadow-2xl sm:rounded-md sm:overflow-hidden px-4  bg-gray-800  sm:p-6">
+              <div>
+                <label for="about" class="block  text-gray-200 font-bold text-2xl raleway_font pb-2">
+                  Leave a Comment Below:
+                </label>
+                <div class="mt-1">
+                  <textarea id="about" name="about" rows="15"
+                    class="comment-body bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2"
+                    placeholder="Tell us what you think about this article!"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="px-4 py-3 bg-gray-800  sm:px-6 justify-between">
+              <div class="flex flex-row justify-between">
+
+                <div class="buttons">
+                  {{!-- if I already liked on it the session user id === the like user id --}}
+                  {{!-- if I want to remove the like i need the like id with the user id matching the session id --}}
+
+                  {{#if (check_for_user_id post.likes userId) }}
+                  {{#each post.likes}}
+                  {{#if (check_if_equal user_id ../userId)}}
+                  <button type="submit" class="justify-center shadow-2xl">
+                    <img class="liked-button" id="like-id-{{id}}" src="../assets/images/heart 32pxl.png" />
+                  </button>
+                  {{/if}}
+                  {{/each}}
+                  {{else}}
+                  <button type="submit" class="justify-center shadow-2xl">
+                    <img class="like-button" id="like" src="../assets/images/offer_heart 32pxl.png" />
+                  </button>
+                  {{/if}}
+                </div>
+                <button type="submit"
+                  class="submit-button inline-flex justify-center py-2 px-4 border border-transparent shadow-2xl text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Save
+                </button>
+              </div>
+            </div>
+            </form>
+          </form>
+        </main>
+      </article>
+      {{!-- <!-- END Article --> --}}
+    </div>
+    {{/if}}
+      {{!-- <!-- END Column --> --}}
   </div>
-</form>
-{{/if}}
+</div>
+
 
 {{> comments post.comments}}
 
 {{#if loggedIn}}
+<script> document.title = "Post Info" </script>
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/like.js"></script>
 {{/if}}

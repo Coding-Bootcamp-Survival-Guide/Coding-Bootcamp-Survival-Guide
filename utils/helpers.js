@@ -25,15 +25,9 @@ module.exports = {
       }
       return found;
     },
-    check_for_category: (array, category) => {
-      let found = false
-      for (i = 0; i < array.length; i++) {
-        if (array[i].post.category === category) found = true;
-      }
-      return found;
-    },
+    
     check_if_equal: (a, b) => {
-      if (a === b) return true;
+      if (a == b) return true;
       else return false;
     }
   }

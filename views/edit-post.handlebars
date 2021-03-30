@@ -1,47 +1,112 @@
-<article>
-  {{!-- <a href="/dashboard"> &larr; Back to dashboard</a> --}}
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input name="post-title" type="text" value="{{post.title}}" />
+{{!-- <!-- Header Start --> --}}
+<div class="my-1 w-full lg:my-4  ">
+  <p class="text-gray-200 text-4xl text-left gloria_font font-black px-16 p-2 leading-relaxed">Edit Post Here</p>
     </div>
-        <div>
-      <label for="post-category">Category (1 = pick a camp, 2 = pre-course, 3 = tools, 4 = front-end, 5 = back-end, 6 = decompress)</label>
-      <input id="post-category" name="post-category" value="{{post.category}}" />
-    </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" value="{{post.post_url}}" />
-    </div>
-    <div>
-      {{!-- <input name="post-text" type="text" value="{{post.post_text}}" /> --}}
-      <label for="post-text">Post</label>
-      <textarea class="post-text" name="post-text" type="text">{{post.post_text}}</textarea> 
-    </div>
-    <div>
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
-    </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
-  </form>
-</article>
+{{!-- <!-- Header End --> --}}
+
+{{!-- New Post Form Start --}}
+<div class="container my-12 mx-auto px-4 md:px-12 w-full ">
+<div class="flex flex-wrap w-full max-w-3xl mx-auto">
 
 
-{{!-- <form class="comment-form">
-  <div>
-    <textarea class="comment-body" name="comment-body"></textarea>
+
+    {{!-- <div> --}}
+      <div class="mt-5 md:mt-0 max-w-3xl w-full mx-auto">
+        <div class="new-post-form max-w-3xl mx-auto">
+          <form class="edit-post-form" method="POST">
+            <div class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-3xl h-auto w-full">
+              <div class="overflow-hidden rounded-lg shadow-2xl bg-gray-800 text-gray-200 max-w-3xl h-auto w-full">
+
+                <div class="flex flex-flow flex-col w-full p-4">
+                  <div class="">
+                    <label for="post-title" class="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Title
+                    </label>
+                    <div class="mx-1 mb-2 rounded-md shadow-sm">
+                      <input type="text" name="post-title" id="post-title" value="{{post.title}}"
+                        class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2">
+                    </div>
+                  </div>
+                
+
+                <div class="flex flex-flow flex-col w-full mt-2">
+                  <div class="">
+                    <label for="post-category" class="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Post Category
+                    </label>
+                    <div class="mt-1">
+                      <select id="post-category" name="post-category" autocomplete="post-category" selected="{{post.category_name}}" class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2 max-w-xs"> 
+                        {{#each categoryNames as |categoryName|}}    
+                          {{!-- to reference a variable outside the scope of handlebars (cagegoryName) need to use ../post.category_name --}}
+                          {{#if (check_if_equal categoryName ../post.category_name)}}
+                            <option class="p-1" value="{{categoryName}}" selected>{{categoryName}}</option>
+                          {{else}}
+                            <option class="p-1" value="{{categoryName}}">{{categoryName}}</option>
+                          {{/if}}
+                        {{/each}}                 
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex flex-flow flex-col w-full mt-2">
+                  <div class="">
+                    <label for="post-url" class="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Post URL
+                    </label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                      <input type="text" name="post-url" id="post-url" value="{{post.post_url}}"
+                        class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2">
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-flow flex-col w-full mt-2">
+                  <div class="">
+                    <label for="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Image URL
+                    </label>
+                    <div class="mt-1 flex rounded-md shadow-sm">
+                      <input type="text" name="post-image" id="post-image" value="{{post.post_image}}"
+                        class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2">
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-flow flex-col w-full mt-2">
+                  <div class="">
+                    <label for="post-text" class="block  text-gray-200 font-bold text-2xl raleway_font p-1 ">
+                      Post
+                    </label>
+                    <div class="mt-1">
+                      <textarea id="post-text" name="post-text" rows="10"
+                        class="bg-gray-600 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md text-gray-100 raleway_font md:text-lg p-2">{{post.post_text}}
+                      </textarea>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="px-4 py-3 text-right sm:px-6 flex flex-flow flex-row justify-between">
+                  <button type="submit"
+                  class="delete-post-btn inline-flex justify-center py-2 px-4 border border-transparent shadow-2xl text-sm font-medium rounded-md text-white bg-indigo-400 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Delete
+                </button>
+                <button class ="btn inline-flex justify-center py-2 px-10 border border-transparent shadow-2xl text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" type="submit"
+                 >
+                  Save
+                </button>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+
   </div>
+</div>
 
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
-
-{{> comments post.comments}} --}}
+<script> document.title = "Edit Post" </script>
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
-{{!-- <script src="/javascript/comment.js"></script> --}}

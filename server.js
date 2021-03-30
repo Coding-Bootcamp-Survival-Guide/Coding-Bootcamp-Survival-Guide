@@ -43,7 +43,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(require('./controllers/'));
+app.use(require('./controllers'));
+
+
+// turn on connection to db and server
+// force:true, drops and re-creates all of the database tables and associations on startup.
+// necessary if have new table associations
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));

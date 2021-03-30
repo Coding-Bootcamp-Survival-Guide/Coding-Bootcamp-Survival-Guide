@@ -3,6 +3,7 @@ async function likeClickHandler(event) {
     const post_id = window.location.toString().split('/')[
       window.location.toString().split('/').length - 1
     ];
+    console.log('*********', post_id, event.target.classList.value)
     if (event.target.classList.value === 'like-button') {
       const response = await fetch('/api/likes', {
         method: 'POST',

@@ -1,0 +1,12 @@
+      {{#if (check_for_category likes 1)}}
+        {{#each likes as |like|}}
+          {{#if (check_if_equal like.post.category_id 1)}}
+            <h3>Picking a Bootcamp</h3>
+            <ol class="like-list">
+              <li>
+                {{> post-info like.post}}
+              </li>
+            </ol>
+          {{/if}}
+        {{/each}}
+      {{/if}}
