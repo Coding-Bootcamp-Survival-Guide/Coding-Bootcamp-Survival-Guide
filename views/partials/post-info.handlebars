@@ -7,20 +7,20 @@
     </a>
 
     <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-      <h1 class="text-lg">
+      <h1 class="text-lg text-left">
         <a class="no-underline hover:underline font-bold text-2xl raleway_font" href="/post/{{id}}">
           {{title}}
         </a>
       </h1>
-      <p class="text-grey-darker text-2xl raleway_font">{{format_date created_at}}</p>
+      <p class="text-grey-darker text-2xl raleway_font text-right">{{format_date created_at}}</p>
     </header>
     <footer class="flex items-center justify-between leading-none p-2 md:p-4">
-      <a class="flex items-center no-underline hover:underline text-black" href="/post/{{id}}">
+      <a class="flex items-center text-left no-underline hover:underline text-black" href="/post/{{id}}">
         <img alt="Profile Pic" class="block rounded-full h-8 w-8" src="{{user.profile_pic}}" />
         <p class="ml-2 text-xl nothing_font font-black text-gray-400">
           {{user.username}}</p>
       </a>
-      <a class="no-underline text-grey-darker hover:underline" href="/post/{{id}}">
+      <a class="no-underline text-grey-darker hover:underline text-right" href="/post/{{id}}">
         <span class="raleway_font text-gray-400">
           {{likes.length}} {{format_plural "like" likes.length}} <i class="fas fa-heart text-red-700"></i>
           |
