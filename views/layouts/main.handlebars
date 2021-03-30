@@ -18,52 +18,31 @@
   <link rel="shortcut icon" type="image/png" href="/assets/images/guide 16pxl.png" />
   {{!-- <title>Coding Bootcamp Survival Guide</title> --}}
   <title>Coding Bootcamp Survival Guide</title>
+  
 </head>
 
 <body class="bg-indigo-900">
 
   <nav class="bg-indigo-900 h-auto">
-    <div class=" mx-auto px-2 sm:px-6 lg:px-8 bg-gray-800 pb-3">
+    <div class=" mx-auto px-2 sm:px-2 lg:px-8 bg-gray-800 lg:py-4">
       <div class="relative flex items-center justify-between h-16 bg-gray-800">
-        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden bg-gray-800">
-          <!-- Mobile menu button-->
-          <button type="button" id="hamburger"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white bg-gray-800"
-            aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <!--
-              Icon when menu is closed.
-              Heroicon name: outline/menu
-              Menu open: "hidden", Menu closed: "block"
-            -->
-            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24"
-              stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <!--
-              Icon when menu is open.
-              Heroicon name: outline/x
-              Menu open: "block", Menu closed: "hidden"
-            -->
-            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24"
-              stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start bg-gray-800">
-          <div class="flex-shrink-0 flex items-center bg-gray-800 justify-around">
-            <img src="/assets/images/guide 32pxl.png" alt="logo" class="p-2" />
-            <span class="gloria_font text-gray-100 text-3xl py-2">Coding Bootcamp Survival Guide</span>
+        
+        <div class="flex-1 flex items-left sm:items-stretch sm:justify-start bg-gray-800">
+          <div class="flex-shrink-0 flex items-center bg-gray-800 ">
+            <img src="/assets/images/guide 32pxl.png" alt="logo" class="p-2 " />
+            <span class="gloria_font text-gray-100 md:text-3xl text-lg py-2 hidden sm:block">Coding Bootcamp Survival Guide</span>
+            <span class="gloria_font text-gray-100 md:text-3xl text-lg py-2 sm:hidden">Bootcamp Survival Guide</span>
           </div>
-          <div class="hidden sm:block sm:ml-6 bg-gray-800">
-            <div class="flex space-x-4">
-              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page"><i
+          <div class="sm:ml-6 bg-gray-800">
+            <div class="flex space-x-4 items-center">
+              
+              <a href="/" class="bg-gray-900 hidden sm:block text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page"><i
                   class="fas fa-home text-2xl"></i></a>
 
+              <div class="hidden lg:block flex flex-row justify-between items-center">
+                
               <a href="/category/pick-camp"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pick a
+                class="text-gray-300 hover:bg-gray-700  hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pick a
                 Camp</a>
 
               <a href="/category/pre-course"
@@ -89,7 +68,7 @@
               <a href="/category/finish-line"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Finish
                 Line!</a>
-
+              </div>
             </div>
           </div>
         </div>
@@ -130,36 +109,36 @@
                 role="menuitem">Your Profile</a>
               <a href="/dashboard/new" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Create a New Post</a>
-              <a href="/category/pick-camp" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/pick-camp" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Pick a Camp</a>
-              <a href="/category/pre-course" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/pre-course" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Pre-Course</a>
-              <a href="/category/tools" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/tools" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Tools</a>
-              <a href="/category/frontend" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/frontend" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Front-End</a>
-              <a href="/category/backend" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/backend" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Back-End</a>
-              <a href="/category/self-care" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/self-care" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Self-Care</a>
-              <a href="/category/finish-line" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/finish-line" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Finish-Line!</a>
               {{else}}
               <a href="/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your
                 Profile</a>
-              <a href="/category/pick-camp" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/pick-camp" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Pick a Camp</a>
-              <a href="/category/pre-course" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/pre-course" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Pre-Course</a>
-              <a href="/category/tools" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/tools" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Tools</a>
-              <a href="/category/frontend" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/frontend" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Front-End</a>
-              <a href="/category/backend" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/backend" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Back-End</a>
-              <a href="/category/self-care" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/self-care" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Self-Care</a>
-              <a href="/category/finish-line" class="lg:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              <a href="/category/finish-line" class="md:hidden block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 role="menuitem">Finish-Line!</a>
 
               {{/if}}
