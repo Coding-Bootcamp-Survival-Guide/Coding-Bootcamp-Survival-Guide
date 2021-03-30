@@ -11,7 +11,7 @@
 
       <header class="flex items-center justify-between leading-tight p-2 md:p-4">
       <h1 class="text-lg">
-        <a class="no-underline hover:underline font-bold text-2xl raleway_font" href="{{post.post_url}}">
+        <a class="no-underline hover:underline font-bold text-2xl raleway_font" href="{{post.post_url}}" target="_blank" >
           {{post.title}}
         </a>
       </h1>
@@ -21,7 +21,7 @@
 
         {{!-- <!-- Article Image --> --}}
         <div class="flex flex-wrap content-center">
-    <a href="{{post.post_url}}" class=" mx-auto px-auto">
+    <a href="{{post.post_url}}" target="_blank" class=" mx-auto px-auto">
       <img alt="Article Image" class="block h-auto w-full max-w-xl max-h-96" src="{{post.post_image}}" />
     </a>
     </div>
