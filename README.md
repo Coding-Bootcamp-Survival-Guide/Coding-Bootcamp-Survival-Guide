@@ -49,10 +49,14 @@
 
 ## User Story: 
 
-> :book: As a bootcamp student or prospective student, I would like an application that allows me to see and comment on blog posts from other bootcamp students and industry professionals. 
-> When in need of resources, I am presented with a list of useful documents and articles in an easy-to-navigate area. 
-> When looking for potential bootcamps to attend, I am presented with suggestions and posts from other bootcamp students and graduates to help inform my decision.
+:book: As a bootcamp student or prospective student, I would like an application that allows me to see and comment on blog posts from other bootcamp students and industry professionals. 
+When in need of resources, I am presented with a list of useful documents and articles in an easy-to-navigate area. 
+When looking for potential bootcamps to attend, I am presented with suggestions and posts from other bootcamp students and graduates to help inform my decision.
 
+
+## Live Site:
+
+> https://coding-bootcamp-survival-guide.herokuapp.com/
 
 ## GitHub Repository Link:
 
@@ -70,10 +74,10 @@ This application is covered by the MIT license.
 
 ## 👥Contributors:
 
-- :octocat: [Kashay Arbelo](https://github.com/KashCodes)<br /> - _Project Manager, Design, HTML, CSS, JavaScript, Documentation, QA, & Presentation (Front-End)_
-- :octocat: [Peter Quinn](https://github.com/PeterdQuinns)<br /> - _Design, HTML, CSS, JavaScript, QA, Presentation (Front-End)_
-- :octocat: [Stephanie Giel](https://github.com/SGiel)<br /> - _Design, JavaScript, APIs, HTML, CSS, QA, Presentation (Back-End)_
-- :octocat: [Garrett Warzecha](https://github.com/gwarzecha)<br /> - _Design, JavaScript, APIs, HTML, CSS, QA, Presentation (Back-End)_
+:octocat: [Kashay Arbelo](https://github.com/KashCodes)<br /> - _Project Manager, Design, HTML, CSS, JavaScript, Documentation, QA, & Presentation (Front-End)_
+:octocat: [Peter Quinn](https://github.com/PeterdQuinns)<br /> - _Design, HTML, CSS, JavaScript, QA, Presentation (Front-End)_
+:octocat: [Stephanie Giel](https://github.com/SGiel)<br /> - _Design, JavaScript, APIs, HTML, CSS, QA, Presentation (Back-End)_
+:octocat: [Garrett Warzecha](https://github.com/gwarzecha)<br /> - _Design, JavaScript, APIs, HTML, CSS, QA, Presentation (Back-End)_
 
 
 
