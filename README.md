@@ -74,10 +74,10 @@ This application is covered by the MIT license.
 
 ## 👥Contributors:
 
-:octocat: [Kashay Arbelo](https://github.com/KashCodes)<br /> - _Project Manager, Design, HTML, CSS, JavaScript, Documentation, QA, & Presentation (Front-End)_
-:octocat: [Peter Quinn](https://github.com/PeterdQuinns)<br /> - _Design, HTML, CSS, JavaScript, QA, Presentation (Front-End)_
-:octocat: [Stephanie Giel](https://github.com/SGiel)<br /> - _Design, JavaScript, APIs, HTML, CSS, QA, Presentation (Back-End)_
-:octocat: [Garrett Warzecha](https://github.com/gwarzecha)<br /> - _Design, JavaScript, APIs, HTML, CSS, QA, Presentation (Back-End)_
+:octocat: [Kashay Arbelo](https://github.com/KashCodes)<br /> - _Project Manager, Design, HTML, CSS, JavaScript, Documentation, QA, & Presentation (Front-End)_ <br />
+:octocat: [Peter Quinn](https://github.com/PeterdQuinns)<br /> - _Design, HTML, CSS, JavaScript, QA, Presentation (Front-End)_ <br />
+:octocat: [Stephanie Giel](https://github.com/SGiel)<br /> - _Design, JavaScript, APIs, HTML, CSS, QA, Presentation (Back-End)_ <br />
+:octocat: [Garrett Warzecha](https://github.com/gwarzecha)<br /> - _Design, JavaScript, APIs, HTML, CSS, QA, Presentation (Back-End)_ <br />
 
 
 
